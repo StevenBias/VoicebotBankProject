@@ -23,6 +23,30 @@ $(document).ready(function() {
 var recognition;
 
 function startRecognition() {
+   //   navigator.mediaDevices.getUserMedia({ audio: true })
+   //      .catch(function() {
+   //         chrome.tabs.create({
+   //            url: chrome.extension.getURL("options.html"),
+   //            selected: true
+   //         })
+   //      });
+   navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(stream => {
+         const mediaRecorder = new MediaRecorder(stream);
+         mediaRecorder.start();
+
+         const audioChunks = [];
+
+         mediaRecorder.addEventListener("dataavailable", event => {
+            audioChunks.push(event.data);
+         });
+
+         setTimeout(() => {
+            mediaRecorder.stop();
+            console.log("stop");
+            console.log(audioChunks);
+         }, 3000);
+      });
    recognition = new webkitSpeechRecognition();
    recognition.onstart = function(event) {
       updateRec();
@@ -118,17 +142,6 @@ textarea { width: 100%; }
       </style>
    </head>
    <body>
-      <script type="text/javascript">
-         setTimeout(() => {
-            navigator.mediaDevices.getUserMedia({ audio: true })
-               .catch(function() {
-                  chrome.tabs.create({
-                     url: chrome.extension.getURL("options.html"),
-                     selected: true
-                  })
-               });
-         }, 100);
-      </script>
       <div>
          <input id="input" type="text"> <button id="rec">Speak</button>
          <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
