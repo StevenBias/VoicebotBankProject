@@ -1,9 +1,19 @@
-   //      .catch(function() {
-   //         chrome.tabs.create({
-   //            url: chrome.extension.getURL("options.html"),
-   //            selected: true
-   //         })
-   //      });
+$(document).ready(function() {
+   $("#input").keypress(function(event) {
+      if (event.which == 13) {
+         event.preventDefault();
+         send();
+      }
+   });
+   $("#rec").click(function(event) {
+      switchRecognition();
+   });
+});
+
+
+var recognition;
+
+function startRecognition() {
    navigator.mediaDevices.getUserMedia({ audio: true })
       .then(stream => {
          const mediaRecorder = new MediaRecorder(stream);
@@ -81,8 +91,8 @@ function send() {
       "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
-       headers: {
-         "Authorization": "Bearer ya29.c.Elq_BiYfE3RAsPW3634636jt_A9AMuVIXZIir6YO26l_IQlHmsiUwZywP4D6R0aGvdjvpTWmkU0DuNQaoTkPcbbjli2MMYEeeW6DRn9G_DTahVxRNsB7Frdy9XE"
+      headers: {
+         "Authorization": "Bearer ya29.c.Elq_BrLRhXsp5DF4kX1q6CO5ZAtASIwYuECBKa2SksrndHThav9zJFwQo20qUq_QG1GphODmMxyP-RgXX25fmrh5L8tnQOcwa2QcS-GgnZLGDm0f7UzNpxiJq18"
       },
       data: JSON.stringify({ 
          "queryInput": {
@@ -114,32 +124,3 @@ function setResponse(val) {
       synthVoice(res);
    }
 }
-
-var GoogleAuth; // Google Auth object.
-document.addEventListener("DOMContentLoaded", function(event) {
-
-   console.log("decl GoogleAuth :"+GoogleAuth);
-   console.log(document.readyState);
-   var SCOPE = 'https://www.googleapis.com/auth/dialogflow https://www.googleapis.com/auth/cloud-platform';
-
-   gapi.load('client:auth2', function() {
-      GoogleAuth = gapi.auth2.init({
-         apiKey: 'AIzaSyA7zxUEwSrcXzKhtCYxU8zyfBKMU_R_ozY',
-         clientId: '225209884470-3mjts65irh43c5drtip1n265nv497cth.apps.googleusercontent.com',
-         cookie_policy: 'none',
-         scope: SCOPE, 
-      }).then(function(){
-         console.log('init');
-         GoogleAuth = gapi.auth2.getAuthInstance();
-         console.log("GoogleAuth1 :"+GoogleAuth);
-
-         // Listen for sign-in state changes.
-         GoogleAuth.isSignedIn.listen(updateSigninStatus);
-
-   //   console.log(JSON.stringify(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true)));
-      });
-   });
-         console.log("GoogleAuth2 :"+GoogleAuth);
-
-});
-
