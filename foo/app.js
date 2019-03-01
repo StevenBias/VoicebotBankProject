@@ -1,17 +1,14 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-
-// $(document).ready(function() {
-//    $("#input").keypress(function(event) {
-//       if (event.which == 13) {
-//          event.preventDefault();
-//          send();
-//       }
-//    });
-//    $("#rec").click(function(event) {
-//       switchRecognition();
-//    });
-// });
+$(document).ready(function() {
+   $("#input").keypress(function(event) {
+      if (event.which == 13) {
+         event.preventDefault();
+         send();
+      }
+   });
+   $("#rec").click(function(event) {
+      switchRecognition();
+   });
+});
 
 
 var recognition;
@@ -159,9 +156,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
          console.log("GoogleAuth2 :"+GoogleAuth);
 
 });
-
-const expressApp = express().use(bodyParser.json())
-
-expressApp.post('/fulfillment', app)
-
-expressApp.listen(3000)
