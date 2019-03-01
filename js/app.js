@@ -1,58 +1,55 @@
-$(document).ready(function() {
-   $("#input").keypress(function(event) {
-      if (event.which == 13) {
-         event.preventDefault();
-         send();
-      }
-   });
-   $("#rec").click(function(event) {
-      switchRecognition();
-   });
-});
-
-
-var recognition = new webkitSpeechRecognition();
-var isRecording = false;
-
-function startRecognition() {
+   //      .catch(function() {
+   //         chrome.tabs.create({
+   //            url: chrome.extension.getURL("options.html"),
+   //            selected: true
+   //         })
+   //      });
    navigator.mediaDevices.getUserMedia({ audio: true })
-      .catch(function() {
-         chrome.tabs.create({
-            url: chrome.extension.getURL("options.html"),
-            selected: true
-         })
+      .then(stream => {
+         const mediaRecorder = new MediaRecorder(stream);
+         mediaRecorder.start();
+
+         const audioChunks = [];
+
+         mediaRecorder.addEventListener("dataavailable", event => {
+            audioChunks.push(event.data);
+         });
+
+         setTimeout(() => {
+            mediaRecorder.stop();
+            console.log("stop");
+            console.log(audioChunks);
+         }, 3000);
       });
+   recognition = new webkitSpeechRecognition();
+   recognition.onstart = function(event) {
+      updateRec();
+   };
+   recognition.onresult = function(event) {
+      var text = "";
+      for (var i = event.resultIndex; i < event.results.length; ++i) {
+         text += event.results[i][0].transcript;
+      }
+      setInput(text);
+      stopRecognition();
+   };
+   recognition.onend = function() {
+      stopRecognition();
+   };
    recognition.lang = "fr-FR";
-}
-
-recognition.onstart = function(event) {
-   updateRec();
    recognition.start();
-};
-
-recognition.onresult = function(event) {
-   var text = "";
-   for (var i = event.resultIndex; i < event.results.length; ++i) {
-      text += event.results[i][0].transcript;
-   }
-   setInput(text);
-   stopRecognition();
-};
-
-recognition.onend = function() {
-   stopRecognition();
-};
+}
 
 function stopRecognition() {
    if (recognition) {
       recognition.stop();
-      //recognition = null;
+      recognition = null;
    }
    updateRec();
 }
 
 function switchRecognition() {
-   if (isRecording) {
+   if (recognition) {
       stopRecognition();
    } else {
       startRecognition();
@@ -65,9 +62,7 @@ function setInput(text) {
 }
 
 function updateRec() {
-   $("#rec").text(isRecording ? "Stop" : "Speak");
-   console.log(isRecording);
-   isRecording = !isRecording;
+   $("#rec").text(recognition ? "Stop" : "Speak");
 }
 
 function synthVoice(text) {
@@ -86,7 +81,7 @@ function send() {
       "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
-      headers: {
+       headers: {
          "Authorization": "Bearer ya29.c.Elq_BiYfE3RAsPW3634636jt_A9AMuVIXZIir6YO26l_IQlHmsiUwZywP4D6R0aGvdjvpTWmkU0DuNQaoTkPcbbjli2MMYEeeW6DRn9G_DTahVxRNsB7Frdy9XE"
       },
       data: JSON.stringify({ 
@@ -115,8 +110,36 @@ function setResponse(val) {
    else{
       $("#response").text(JSON.stringify(val, undefined, 2));
       var res = val.queryResult.fulfillmentText;
-      var audio = val.outputAudio;
       console.log(res);
       synthVoice(res);
    }
 }
+
+var GoogleAuth; // Google Auth object.
+document.addEventListener("DOMContentLoaded", function(event) {
+
+   console.log("decl GoogleAuth :"+GoogleAuth);
+   console.log(document.readyState);
+   var SCOPE = 'https://www.googleapis.com/auth/dialogflow https://www.googleapis.com/auth/cloud-platform';
+
+   gapi.load('client:auth2', function() {
+      GoogleAuth = gapi.auth2.init({
+         apiKey: 'AIzaSyA7zxUEwSrcXzKhtCYxU8zyfBKMU_R_ozY',
+         clientId: '225209884470-3mjts65irh43c5drtip1n265nv497cth.apps.googleusercontent.com',
+         cookie_policy: 'none',
+         scope: SCOPE, 
+      }).then(function(){
+         console.log('init');
+         GoogleAuth = gapi.auth2.getAuthInstance();
+         console.log("GoogleAuth1 :"+GoogleAuth);
+
+         // Listen for sign-in state changes.
+         GoogleAuth.isSignedIn.listen(updateSigninStatus);
+
+   //   console.log(JSON.stringify(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true)));
+      });
+   });
+         console.log("GoogleAuth2 :"+GoogleAuth);
+
+});
+
