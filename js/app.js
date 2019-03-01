@@ -39,7 +39,7 @@ recognition.onresult = function(event) {
    stopRecognition();
 };
 
-recognition.onend = function() {
+recognition.onspeechend = function() {
    stopRecognition();
 };
 
@@ -110,7 +110,9 @@ function setResponse(val) {
    else{
       $("#response").text(JSON.stringify(val, undefined, 2));
       var res = val.queryResult.fulfillmentText;
+      var audio = val.outputAudio;
+      var snd = new Audio("data:audio/wav;base64," + audio);
+      snd.play();
       console.log(res);
-      synthVoice(res);
    }
 }
