@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
    gapi.load('client:auth2', function() {
       GoogleAuth = gapi.auth2.init({
-         apiKey: 'AIzaSyA7zxUEwSrcXzKhtCYxU8zyfBKMU_R_ozY',
+         apiKey: 'AIzaSyDCa-0Ic6ybimE0HwOaD2U53CIBnoJXYJk',
          clientId: '225209884470-3mjts65irh43c5drtip1n265nv497cth.apps.googleusercontent.com',
          cookie_policy: 'none',
          scope: SCOPE, 
