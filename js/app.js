@@ -14,29 +14,12 @@ $(document).ready(function() {
 var recognition;
 
 function startRecognition() {
-   //   navigator.mediaDevices.getUserMedia({ audio: true })
-   //      .catch(function() {
-   //         chrome.tabs.create({
-   //            url: chrome.extension.getURL("options.html"),
-   //            selected: true
-   //         })
-   //      });
    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
-         const mediaRecorder = new MediaRecorder(stream);
-         mediaRecorder.start();
-
-         const audioChunks = [];
-
-         mediaRecorder.addEventListener("dataavailable", event => {
-            audioChunks.push(event.data);
-         });
-
-         setTimeout(() => {
-            mediaRecorder.stop();
-            console.log("stop");
-            console.log(audioChunks);
-         }, 3000);
+      .catch(function() {
+         chrome.tabs.create({
+            url: chrome.extension.getURL("options.html"),
+            selected: true
+         })
       });
    recognition = new webkitSpeechRecognition();
    recognition.onstart = function(event) {
