@@ -1,24 +1,18 @@
-<html>
-   <head>
-      <title>API Example</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script type="text/javascript">
+const express = require('express')
+const bodyParser = require('body-parser')
 
-         var accessToken = "f7c3ddd583cc4741bf83255a63d483b1";
-         var baseUrl = "https://api.api.ai/v1/";
+// $(document).ready(function() {
+//    $("#input").keypress(function(event) {
+//       if (event.which == 13) {
+//          event.preventDefault();
+//          send();
+//       }
+//    });
+//    $("#rec").click(function(event) {
+//       switchRecognition();
+//    });
+// });
 
-$(document).ready(function() {
-   $("#input").keypress(function(event) {
-      if (event.which == 13) {
-         event.preventDefault();
-         send();
-      }
-   });
-   $("#rec").click(function(event) {
-      switchRecognition();
-   });
-});
 
 var recognition;
 
@@ -102,13 +96,19 @@ function send() {
    var text = $("#input").val();
    $.ajax({
       type: "POST",
-      url: baseUrl + "query?v=20150910",
+      //$(gcloud auth application-default print-access-token)
+      url:
+      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
-      headers: {
-         "Authorization": "Bearer " + accessToken
-      },
-      data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+      data: JSON.stringify({ 
+         "queryInput": {
+            "text": {
+               "text": text,
+               "languageCode": "fr-FR"
+            }
+         }
+      }),
 
       success: function(data) {
          setResponse(data);
@@ -126,26 +126,42 @@ function setResponse(val) {
    }
    else{
       $("#response").text(JSON.stringify(val, undefined, 2));
-      var res = val.result.fulfillment.speech;
+      var res = val.queryResult.fulfillmentText;
       console.log(res);
       synthVoice(res);
    }
 }
 
-      </script>
-      <style type="text/css">
-body { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
-div {  position: absolute; }
-input { width: 400px; }
-button { width: 50px; }
-textarea { width: 100%; }
-      </style>
-   </head>
-   <body>
-      <div>
-         <input id="input" type="text"> <button id="rec">Speak</button>
-         <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
-      </div>
-   </body>
-</html>
+var GoogleAuth; // Google Auth object.
+document.addEventListener("DOMContentLoaded", function(event) {
 
+   console.log("decl GoogleAuth :"+GoogleAuth);
+   console.log(document.readyState);
+   var SCOPE = 'https://www.googleapis.com/auth/dialogflow https://www.googleapis.com/auth/cloud-platform';
+
+   gapi.load('client:auth2', function() {
+      GoogleAuth = gapi.auth2.init({
+         apiKey: 'AIzaSyA7zxUEwSrcXzKhtCYxU8zyfBKMU_R_ozY',
+         clientId: '225209884470-3mjts65irh43c5drtip1n265nv497cth.apps.googleusercontent.com',
+         cookie_policy: 'none',
+         scope: SCOPE, 
+      }).then(function(){
+         console.log('init');
+         GoogleAuth = gapi.auth2.getAuthInstance();
+         console.log("GoogleAuth1 :"+GoogleAuth);
+
+         // Listen for sign-in state changes.
+         GoogleAuth.isSignedIn.listen(updateSigninStatus);
+
+   //   console.log(JSON.stringify(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true)));
+      });
+   });
+         console.log("GoogleAuth2 :"+GoogleAuth);
+
+});
+
+const expressApp = express().use(bodyParser.json())
+
+expressApp.post('/fulfillment', app)
+
+expressApp.listen(3000)
