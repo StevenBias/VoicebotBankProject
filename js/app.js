@@ -11,68 +11,58 @@ $(document).ready(function() {
 });
 
 
-var recognition;
+var recognition = new webkitSpeechRecognition();
+var isRecording = false;
 
 function startRecognition() {
    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
-         const mediaRecorder = new MediaRecorder(stream);
-         mediaRecorder.start();
-
-         const audioChunks = [];
-
-         mediaRecorder.addEventListener("dataavailable", event => {
-            audioChunks.push(event.data);
-         });
-
-         setTimeout(() => {
-            mediaRecorder.stop();
-            console.log("stop");
-            console.log(audioChunks);
-         }, 3000);
+      .catch(function() {
+         chrome.tabs.create({
+            url: chrome.extension.getURL("options.html"),
+            selected: true
+         })
       });
-   recognition = new webkitSpeechRecognition();
-   recognition.onstart = function(event) {
-      updateRec();
-   };
-   recognition.onresult = function(event) {
-      var text = "";
-      for (var i = event.resultIndex; i < event.results.length; ++i) {
-         text += event.results[i][0].transcript;
-      }
-      setInput(text);
-      stopRecognition();
-   };
-   recognition.onend = function() {
-      stopRecognition();
-   };
    recognition.lang = "fr-FR";
    recognition.start();
 }
 
+recognition.onstart = function(event) {
+   $("#rec").text("Stop");
+};
+
+recognition.onresult = function(event) {
+   var text = "";
+   for (var i = event.resultIndex; i < event.results.length; ++i) {
+      text += event.results[i][0].transcript;
+   }
+   setInput(text);
+   stopRecognition();
+};
+
+recognition.onend = function() {
+   stopRecognition();
+};
+
 function stopRecognition() {
    if (recognition) {
       recognition.stop();
-      recognition = null;
    }
-   updateRec();
+   $("#rec").text("Speak");
+   isRecording = false;
 }
 
 function switchRecognition() {
-   if (recognition) {
+   if (isRecording) {
       stopRecognition();
    } else {
       startRecognition();
    }
+   isRecording = !isRecording;
 }
 
 function setInput(text) {
    $("#input").val(text);
    send();
-}
-
-function updateRec() {
-   $("#rec").text(recognition ? "Stop" : "Speak");
 }
 
 function synthVoice(text) {
