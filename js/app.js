@@ -11,7 +11,8 @@ $(document).ready(function() {
 });
 
 
-var recognition;
+var recognition = new webkitSpeechRecognition();
+var isRecording = false;
 
 function startRecognition() {
    navigator.mediaDevices.getUserMedia({ audio: true })
@@ -21,35 +22,37 @@ function startRecognition() {
             selected: true
          })
       });
-   recognition = new webkitSpeechRecognition();
-   recognition.onstart = function(event) {
-      updateRec();
-   };
-   recognition.onresult = function(event) {
-      var text = "";
-      for (var i = event.resultIndex; i < event.results.length; ++i) {
-         text += event.results[i][0].transcript;
-      }
-      setInput(text);
-      stopRecognition();
-   };
-   recognition.onend = function() {
-      stopRecognition();
-   };
    recognition.lang = "fr-FR";
-   recognition.start();
 }
+
+recognition.onstart = function(event) {
+   updateRec();
+   recognition.start();
+};
+
+recognition.onresult = function(event) {
+   var text = "";
+   for (var i = event.resultIndex; i < event.results.length; ++i) {
+      text += event.results[i][0].transcript;
+   }
+   setInput(text);
+   stopRecognition();
+};
+
+recognition.onend = function() {
+   stopRecognition();
+};
 
 function stopRecognition() {
    if (recognition) {
       recognition.stop();
-      recognition = null;
+      //recognition = null;
    }
    updateRec();
 }
 
 function switchRecognition() {
-   if (recognition) {
+   if (isRecording) {
       stopRecognition();
    } else {
       startRecognition();
@@ -62,7 +65,9 @@ function setInput(text) {
 }
 
 function updateRec() {
-   $("#rec").text(recognition ? "Stop" : "Speak");
+   $("#rec").text(isRecording ? "Stop" : "Speak");
+   console.log(isRecording);
+   isRecording = !isRecording;
 }
 
 function synthVoice(text) {
@@ -110,6 +115,7 @@ function setResponse(val) {
    else{
       $("#response").text(JSON.stringify(val, undefined, 2));
       var res = val.queryResult.fulfillmentText;
+      var audio = val.outputAudio;
       console.log(res);
       synthVoice(res);
    }
