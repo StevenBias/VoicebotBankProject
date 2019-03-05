@@ -1,3 +1,7 @@
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
 $(document).ready(function() {
    $("#input").keypress(function(event) {
       if (event.which == 13) {
@@ -82,7 +86,7 @@ function send() {
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       headers: {
-         "Authorization": "Bearer ya29.c.Elq_BvmfCfwiNgvPPx9PzKH4K3IIwn6DmbI-1zrZAOaZ17KVhrFCo42fuYudYEmRgK0_AeYWrYuRZ0IDPS8FGA-SWKU_fi3GpoKUoT7ROpDN4MrdF_pji3WpK0c"
+         "Authorization": "Bearer ya29.c.ElrDBpzvzDN-jczaIrom4WCfproIs4x1GUxhm-CI2ULn_7i8ukYKZksZxx_d2vO4Pu_i0LKo0wovoTFnDvp81vANmWWODbWqwqqs8_gIpxC-MRD6IcRgvuJNU8k"
       },
       data: JSON.stringify({ 
          "queryInput": {
