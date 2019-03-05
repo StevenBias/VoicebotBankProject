@@ -2,6 +2,8 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
+var gapi = gapi || {};
+
 $(document).ready(function() {
    $("#input").keypress(function(event) {
       if (event.which == 13) {
@@ -86,7 +88,7 @@ function send() {
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       headers: {
-         "Authorization": "Bearer ya29.c.ElrDBpzvzDN-jczaIrom4WCfproIs4x1GUxhm-CI2ULn_7i8ukYKZksZxx_d2vO4Pu_i0LKo0wovoTFnDvp81vANmWWODbWqwqqs8_gIpxC-MRD6IcRgvuJNU8k"
+         "Authorization": "Bearer " + getToken()
       },
       data: JSON.stringify({ 
          "queryInput": {
@@ -120,3 +122,34 @@ function setResponse(val) {
       console.log(res);
    }
 }
+
+// [START load_auth2_library]
+function loadAuthClient(){
+   console.log("load");
+   gapi.load('auth2', initGoogleAuth);
+}
+// [END load_auth2_library]
+
+// [START init_google_auth]
+function initGoogleAuth(clientId = '110158854207866034995'){
+   var SCOPE = 'https://www.googleapis.com/auth/dialogflow https://www.googleapis.com/auth/cloud-platform';
+   console.log("init");
+   gapi.auth2.init({
+      clientId: clientId,
+      scope: SCOPE
+   }).then(()=>{
+//      getToken();
+//      console.log("ttt");
+   }).catch(err => {
+      console.log(err);
+   });
+}
+// [END init_google_auth]
+
+// [START user_signin]
+function getToken() {
+   var user = gapi.auth2.getAuthInstance().currentUser.get();
+   var idToken = user.getAuthResponse().id_token;
+   console.log(idToken);
+}
+// [END user_signin]
