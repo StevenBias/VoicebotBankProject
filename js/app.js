@@ -84,7 +84,7 @@ function send() {
       type: "POST",
       //$(gcloud auth application-default print-access-token)
       url:
-      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
+      "https://dialogflow.googleapis.com/v2/projects/guide-cetelem/agent/sessions/1234:detectIntent",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       headers: {
@@ -132,7 +132,7 @@ function loadAuthClient(){
 
 // [START init_google_auth]
 function initGoogleAuth(clientId = '225209884470-ftc3kpc2pqovv0cno54mlckq4t9s35eu.apps.googleusercontent.com'){
-   var SCOPE = 'https://www.googleapis.com/auth/dialogflow https://www.googleapis.com/auth/cloud-platform';
+   var SCOPE = 'https://www.googleapis.com/auth/dialogflow';
    console.log("init");
    gapi.client.init({
       clientId: clientId,
@@ -140,6 +140,7 @@ function initGoogleAuth(clientId = '225209884470-ftc3kpc2pqovv0cno54mlckq4t9s35e
    }).then(()=>{
       console.log("ttt");
    }).catch(err => {
+      console.log("erreur");
       console.log(err);
    });
 }
