@@ -80,15 +80,17 @@ function synthVoice(text) {
 
 function send() {
    var text = $("#input").val();
+   var token = getToken();
+   console.log(token);
    $.ajax({
       type: "POST",
       //$(gcloud auth application-default print-access-token)
       url:
-      "https://dialogflow.googleapis.com/v2/projects/guide-cetelem/agent/sessions/1234:detectIntent",
+      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       headers: {
-         "Authorization": "Bearer " + getToken()
+         "Authorization": "Bearer " + token
       },
       data: JSON.stringify({ 
          "queryInput": {
@@ -126,21 +128,21 @@ function setResponse(val) {
 // [START load_auth2_library]
 function loadAuthClient(){
    console.log("load");
-   gapi.load('client:auth2', initGoogleAuth);
+   gapi.load('auth2', initGoogleAuth);
 }
 // [END load_auth2_library]
 
 // [START init_google_auth]
-function initGoogleAuth(clientId = '225209884470-ftc3kpc2pqovv0cno54mlckq4t9s35eu.apps.googleusercontent.com'){
-   var SCOPE = 'https://www.googleapis.com/auth/dialogflow';
+function initGoogleAuth(clientId = '225209884470-vrbburpnhs875a10dukuf1v6sb4quqj6.apps.googleusercontent.com'){
+   var SCOPE = 'https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/dialogflow';
    console.log("init");
-   gapi.client.init({
+   gapi.auth2.init({
       clientId: clientId,
       scope: SCOPE
    }).then(()=>{
       console.log("ttt");
    }).catch(err => {
-      console.log("erreur");
+      console.log('erreur');
       console.log(err);
    });
 }
@@ -148,8 +150,12 @@ function initGoogleAuth(clientId = '225209884470-ftc3kpc2pqovv0cno54mlckq4t9s35e
 
 // [START user_signin]
 function getToken() {
+//  gapi.auth2.getAuthInstance().signIn().then(() => {
+//  }).catch(err => {
+//    console.log(err);
+//  });
    var user = gapi.auth2.getAuthInstance().currentUser.get();
-   var idToken = user.getAuthResponse().id_token;
-   console.log(idToken);
+   var idToken = user.getAuthResponse().access_token;
+   return idToken;
 }
 // [END user_signin]
