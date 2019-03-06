@@ -126,20 +126,19 @@ function setResponse(val) {
 // [START load_auth2_library]
 function loadAuthClient(){
    console.log("load");
-   gapi.load('auth2', initGoogleAuth);
+   gapi.load('client:auth2', initGoogleAuth);
 }
 // [END load_auth2_library]
 
 // [START init_google_auth]
-function initGoogleAuth(clientId = '110158854207866034995'){
+function initGoogleAuth(clientId = '225209884470-ftc3kpc2pqovv0cno54mlckq4t9s35eu.apps.googleusercontent.com'){
    var SCOPE = 'https://www.googleapis.com/auth/dialogflow https://www.googleapis.com/auth/cloud-platform';
    console.log("init");
-   gapi.auth2.init({
+   gapi.client.init({
       clientId: clientId,
       scope: SCOPE
    }).then(()=>{
-//      getToken();
-//      console.log("ttt");
+      console.log("ttt");
    }).catch(err => {
       console.log(err);
    });
