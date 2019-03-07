@@ -40,6 +40,9 @@ recognition.onresult = function(event) {
 recognition.onspeechend = function() {
    stopRecognition();
 };
+recognition.onend = function() {
+   stopRecognition();
+}
 
 function stopRecognition() {
    if (isRecording) {
@@ -112,7 +115,6 @@ function setResponse(val) {
       var audio = val.outputAudio;
       var snd = new Audio("data:audio/wav;base64," + audio);
       snd.play();
-      console.log(res);
    }
 }
 
