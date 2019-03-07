@@ -1,6 +1,4 @@
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
-var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
 var gapi = gapi || {};
 
@@ -17,19 +15,13 @@ $(document).ready(function() {
 });
 
 
-var recognition = new webkitSpeechRecognition();
+var recognition = new SpeechRecognition();
 var isRecording = false;
 
 function startRecognition() {
-   navigator.mediaDevices.getUserMedia({ audio: true })
-      .catch(function() {
-         chrome.tabs.create({
-            url: chrome.extension.getURL("options.html"),
-            selected: true
-         })
-      });
    recognition.lang = "fr-FR";
    recognition.start();
+   isRecording = true;
 }
 
 recognition.onstart = function(event) {
@@ -50,7 +42,7 @@ recognition.onspeechend = function() {
 };
 
 function stopRecognition() {
-   if (recognition) {
+   if (isRecording) {
       recognition.stop();
    }
    $("#rec").text("Speak");
@@ -63,7 +55,7 @@ function switchRecognition() {
    } else {
       startRecognition();
    }
-   isRecording = !isRecording;
+//   isRecording = !isRecording;
 }
 
 function setInput(text) {
@@ -81,7 +73,6 @@ function synthVoice(text) {
 function send() {
    var text = $("#input").val();
    var token = getToken();
-   console.log(token);
    $.ajax({
       type: "POST",
       //$(gcloud auth application-default print-access-token)
@@ -127,7 +118,6 @@ function setResponse(val) {
 
 // [START load_auth2_library]
 function loadAuthClient(){
-   console.log("load");
    gapi.load('auth2', initGoogleAuth);
 }
 // [END load_auth2_library]
@@ -135,25 +125,15 @@ function loadAuthClient(){
 // [START init_google_auth]
 function initGoogleAuth(clientId = '225209884470-vrbburpnhs875a10dukuf1v6sb4quqj6.apps.googleusercontent.com'){
    var SCOPE = 'https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/dialogflow';
-   console.log("init");
    gapi.auth2.init({
       clientId: clientId,
       scope: SCOPE
-   }).then(()=>{
-      console.log("ttt");
-   }).catch(err => {
-      console.log('erreur');
-      console.log(err);
    });
 }
 // [END init_google_auth]
 
 // [START user_signin]
 function getToken() {
-//  gapi.auth2.getAuthInstance().signIn().then(() => {
-//  }).catch(err => {
-//    console.log(err);
-//  });
    var user = gapi.auth2.getAuthInstance().currentUser.get();
    var idToken = user.getAuthResponse().access_token;
    return idToken;
