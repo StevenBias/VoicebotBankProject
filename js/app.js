@@ -1,6 +1,5 @@
+//For compatibility
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-
-var gapi = gapi || {};
 
 $(document).ready(function() {
    $("#input").keypress(function(event) {
@@ -58,19 +57,11 @@ function switchRecognition() {
    } else {
       startRecognition();
    }
-//   isRecording = !isRecording;
 }
 
 function setInput(text) {
    $("#input").val(text);
    send();
-}
-
-function synthVoice(text) {
-   const synth = window.speechSynthesis;
-   const utterance = new SpeechSynthesisUtterance();
-   utterance.text = text;
-   synth.speak(utterance);
 }
 
 function send() {
@@ -112,32 +103,11 @@ function setResponse(val) {
    else{
       $("#response").text(JSON.stringify(val, undefined, 2));
       var res = val.queryResult.fulfillmentText;
-      var audio = val.outputAudio;
-      var snd = new Audio("data:audio/wav;base64," + audio);
+      var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
+      //re-acrivate mic after end of bot speech
+      snd.addEventListener("ended", function(){
+         switchRecognition();
+      });
       snd.play();
    }
 }
-
-// [START load_auth2_library]
-function loadAuthClient(){
-   gapi.load('auth2', initGoogleAuth);
-}
-// [END load_auth2_library]
-
-// [START init_google_auth]
-function initGoogleAuth(clientId = '225209884470-vrbburpnhs875a10dukuf1v6sb4quqj6.apps.googleusercontent.com'){
-   var SCOPE = 'https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/dialogflow';
-   gapi.auth2.init({
-      clientId: clientId,
-      scope: SCOPE
-   });
-}
-// [END init_google_auth]
-
-// [START user_signin]
-function getToken() {
-   var user = gapi.auth2.getAuthInstance().currentUser.get();
-   var idToken = user.getAuthResponse().access_token;
-   return idToken;
-}
-// [END user_signin]
