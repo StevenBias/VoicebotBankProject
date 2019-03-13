@@ -101,7 +101,7 @@ function setResponse(val) {
       $("#response").text(val);
    }
    else{
-      $("#response").text(JSON.stringify(val, undefined, 2));
+      $("#response").text(val.queryResult.fulfillmentText);
       var res = val.queryResult.fulfillmentText;
       var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
       //re-acrivate mic after end of bot speech
