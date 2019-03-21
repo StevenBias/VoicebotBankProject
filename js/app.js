@@ -62,7 +62,6 @@ function switchRecognition() {
 
 function setInput(text) {
    $("#input").val(text);
-   addUserItem(text);
    send();
 }
 
