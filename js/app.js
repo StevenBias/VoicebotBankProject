@@ -2,6 +2,7 @@
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 
 $(document).ready(function() {
+      addBotItem("Je suis Guy");
    $("#input").keypress(function(event) {
       if (event.which == 13) {
          event.preventDefault();
@@ -61,11 +62,13 @@ function switchRecognition() {
 
 function setInput(text) {
    $("#input").val(text);
+   addUserItem(text);
    send();
 }
 
 function send() {
    var text = $("#input").val();
+   addUserItem(text);
    var token = getToken();
    $.ajax({
       type: "POST",
@@ -101,7 +104,9 @@ function setResponse(val) {
       $("#response").text(val);
    }
    else{
-      $("#response").text(val.queryResult.fulfillmentText);
+      var response = val.queryResult.fulfillmentText
+      $("#response").text(response);
+      addBotItem(response);
       var res = val.queryResult.fulfillmentText;
       var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
       //re-acrivate mic after end of bot speech

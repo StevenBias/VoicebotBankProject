@@ -6,7 +6,8 @@
       <script src="https://apis.google.com/js/platform.js?onload=loadAuthClient" async defer ></script>
       <link rel="stylesheet" type="text/css" href="normalize.css" />
       <link rel="stylesheet" type="text/css" href="layout.css" />
-      <script type="text/javascript" src="js/auth.js"></script>
+      <script type="text/javascript" src="js/auth.js" async defer ></script>
+      <script type="text/javascript" src="js/messaging.js"></script>
       <script type="text/javascript" src="js/app.js"></script>
       <style type="text/css">
 body { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
@@ -19,9 +20,10 @@ textarea { width: 100%; }
    </head>
    <body>
       <div>
-         <br>Response<br> <textarea id="response" cols="40" rows="5"></textarea>
          <div class="app-container">
-            <div class="app-header"><h1>Guy</h1></div>
+            <div class="app-header">
+               <h1>Guy</h1>
+            </div>
             <div class="app-content">
             </div>
             <div class="app-footer not-signed-in">
