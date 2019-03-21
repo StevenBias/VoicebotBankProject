@@ -4,21 +4,39 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="https://apis.google.com/js/platform.js?onload=loadAuthClient" async defer ></script>
-      <script type="text/javascript" src="js/auth.js"></script>
+      <link rel="stylesheet" type="text/css" href="normalize.css" />
+      <link rel="stylesheet" type="text/css" href="layout.css" />
+      <script type="text/javascript" src="js/auth.js" async defer ></script>
+      <script type="text/javascript" src="js/messaging.js"></script>
       <script type="text/javascript" src="js/app.js"></script>
       <style type="text/css">
-         body { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
-         div {  position: absolute; }
-         input { width: 400px; }
-         button { width: 50px; }
-         textarea { width: 100%; }
+body { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
+div {  position: relative; }
+input { width: 400px; }
+button { width: 50px; }
+textarea { width: 100%; }
       </style>
       <link rel="manifest" href="manifest.webapp">
    </head>
    <body>
       <div>
-         <input id="input" type="text"> <button id="rec">Speak</button>
-         <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
+         <div class="app-container">
+            <div class="app-header">
+               <h1>Guy</h1>
+            </div>
+            <div class="app-content">
+            </div>
+            <div class="app-footer not-signed-in">
+               <div class="app-footer-inner">
+                  <div class="mic">
+                     <div class="ready"><a href="#" id="start"><img src="cetelem.png" alt="Tap me to speak" /></a></div>
+                  </div>
+                  <div>
+                     <input id="input" type="text"> <button id="rec">Speak</button>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
    </body>
 </html>
