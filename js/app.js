@@ -2,7 +2,7 @@
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 
 $(document).ready(function() {
-      addBotItem("Je suis Guy");
+   addBotItem("Je suis Guy");
    $("#input").keypress(function(event) {
       if (event.which == 13) {
          event.preventDefault();
@@ -67,6 +67,7 @@ function setInput(text) {
 
 function send() {
    var text = $("#input").val();
+   $("#input").val('');
    addUserItem(text);
    var token = getToken();
    $.ajax({
