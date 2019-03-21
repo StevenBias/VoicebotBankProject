@@ -106,6 +106,7 @@ function setResponse(val) {
    else{
       var response = val.queryResult.fulfillmentText
       $("#response").text(response);
+      $("#input").text("");
       addBotItem(response);
       var res = val.queryResult.fulfillmentText;
       var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
