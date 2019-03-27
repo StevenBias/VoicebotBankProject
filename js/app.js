@@ -104,7 +104,7 @@ function setResponse(val) {
       $("#response").text(val);
    }
    else{
-      var response = val.queryResult.fulfillmentText
+      var response = val.queryResult.fulfillmentText;
       $("#response").text(response);
       $("#input").text("");
       addBotItem(response);
@@ -112,8 +112,20 @@ function setResponse(val) {
       var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
       //re-acrivate mic after end of bot speech
       snd.addEventListener("ended", function(){
-         switchRecognition();
+         if(!isOver(val))
+            switchRecognition();
       });
       snd.play();
    }
+}
+
+
+function isOver(val){
+   var res = val.queryResult.intent.displayName;
+   if(res == "Stop"){
+      console.log("true");
+      return true;
+   }
+   console.log("false");
+   return false;
 }
