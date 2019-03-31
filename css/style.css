@@ -1,0 +1,10 @@
+.chatbox{
+   position: absolute;
+   height: 100%;
+   right: 10px;
+   bottom: 0;
+}
+#input[type=text]{
+   width: 220px;
+}
+

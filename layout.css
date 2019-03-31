@@ -6,7 +6,7 @@
 
 .app-header {
   background-color: #3D4145;
-  height: 77px;
+  height: 10%;
   color: #ffffff;
   flex-grow: 0;
   flex-shrink: 0;
@@ -15,10 +15,10 @@
 }
 
 .app-header > h1 {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 200;
   margin: 0;
-  margin-top: 28px;
+  margin-top: 15px;
 }
 
 .app-content {
@@ -182,9 +182,11 @@
 
 @media screen and (min-width: 480px) and (min-height: 256px) {
   .app-container {
-    width: 480px;
+     position: absolute;
+    width: 250px;
     margin-left: auto;
-    margin-right: auto;
+    right: 10px;
+    bottom: 0;
   }
 
   .app-content {
