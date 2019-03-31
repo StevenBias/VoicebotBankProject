@@ -14,6 +14,7 @@ $(document).ready(function() {
    });
 });
 
+$('body').on('click', '.app-header:not(.app-header)', function() {console.log("test")/* showChat(this);*/ });
 
 var recognition = new SpeechRecognition();
 var isRecording = false;
