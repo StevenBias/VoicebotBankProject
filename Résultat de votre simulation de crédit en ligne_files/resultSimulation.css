@@ -1,0 +1,4497 @@
+/* Slider */
+.slick-slider{
+	position: relative;
+
+	display: block;
+	box-sizing: border-box;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.slick-list{
+	
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.slick-list:focus{
+
+	outline: none;
+}
+
+.slick-list.dragging{
+
+	cursor: pointer;
+	cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list{
+
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slick-track{
+
+	position: relative;
+	top: 0;
+	left: 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after{
+	
+	display: table;
+	content: '';
+}
+
+.slick-track:after{
+	
+	clear: both;
+}
+
+.slick-loading .slick-track{
+
+	visibility: hidden;
+}
+
+.slick-slide{
+
+	display: none;
+	float: left;
+	height: 100%;
+	min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide{
+	
+	float: right;
+}
+
+.slick-slide img{
+  
+	display: block;
+}
+
+.slick-slide.slick-loading img{
+  
+	display: none;
+}
+
+.slick-slide.dragging img{
+	
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide{
+
+  display: block;
+}
+
+.slick-loading .slick-slide{
+  
+	visibility: hidden;
+}
+
+.slick-vertical .slick-slide{
+    
+	display: block;
+	height: auto;
+	border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  
+	display: none;
+}
+
+.simu-title.credit{
+	
+	color: #00a0d7;
+}
+
+.modifier{
+
+	color: black;
+	display: inline-block;
+	margin-top: 9px;
+	margin-left:12px;
+	padding-right: 24px;
+}
+
+.modifier:active,
+.modifier:visited,
+{
+
+	color: black;
+}
+
+.modifier:hover,
+{
+
+	color: #96bf31;
+}
+
+.aPartir{
+
+	display: inline-block;
+}
+
+.aPartirHide{
+
+	display: none;
+}
+
+.assurance-table,
+.simu-first-row .whiteBox,
+.simu-details .whiteBox{
+
+	border-radius: 5px;
+}
+
+.simu-montant .montant,
+.ncr .box-taeg .montant,
+.simu-taux .montant{
+
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 2.5;
+}
+
+.simu-montant .whiteBox{
+
+	padding-bottom: 4rem;
+}
+
+.simu-first-row h2{
+
+	font-weight: normal;
+}
+
+.simu-first-row{
+
+	position: relative;
+}
+
+.simu-montant-container{
+
+	position: static;
+}
+
+.credito-montant{
+
+	position: absolute;
+	left: 0%;
+	top: 33%;
+}
+
+.taux-taeg{
+
+	font-size: 1.1rem;
+	margin-bottom: -0.5rem;
+	display: inline-block;
+}
+
+.taux-deb{
+
+	margin-bottom: 1.2rem;
+	display: inline-block;
+}
+
+.taux-deb span{
+
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.taux-taeg span{
+
+	font-size: 3.4rem;
+	font-weight: bold;
+}
+
+.a-partir{
+
+	font-weight: normal;
+	display: inline-block;
+}
+
+.simu-taux .whiteBox{
+
+	padding: 0.625rem 1rem 1.3rem 1rem;
+}
+
+.simu-taux .cta-container{
+
+	margin-top: -25px;
+}
+
+.simu-taux .cta-container .button{
+
+	margin-bottom: 5px;
+	padding: 1.12rem 2.18rem 1.12rem 2.18rem;
+}
+
+.details-title{
+
+	display: inline-block;
+	font-size: 1.75rem;
+}
+
+.choice-table .details-title p{
+
+	line-height: 1.3;
+}
+
+.simu-details .details-topbar{
+
+	margin-bottom: 3px;
+}
+
+.simu-details .icon{
+
+	border: 2px solid #96bf31;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	display: none !important;
+	margin-right: 10px;
+	float: right;
+}
+
+.simu-details .icon:hover{
+
+	border: 2px solid #96bf31;
+	background-color: #96bf31;
+
+}
+
+.steps-title,
+.card-details-title,
+.assurance-title{
+
+	font-size: 1.75rem;
+}
+
+.assurance-title{
+
+	margin-bottom: 0rem;
+}
+
+.assurance-title span{
+
+	font-size: 1.125rem;
+	font-weight: normal;
+}
+
+.assurance-table{
+
+	border: 3px solid #9B9B9B;
+	padding: 1.25rem 1.25rem 0rem 1.25rem;
+}
+
+.assurance-text{
+
+	line-height: 1.2rem;
+	margin-bottom: 0.625rem;
+}
+
+.simu-details .detail-line.credit p{
+
+	color: #00a0d7;
+}
+
+.simu-details .detail-line.credit .dotted-line{
+
+	border-bottom: 2px dotted #00a0d7;
+}
+
+
+.new-cr.credit.bottom-arrow {
+    background-image: url(../../new-img/arrows/resultSimulation/bottomArrow-credit.png);
+}
+
+.dotted-line{
+
+	min-height: 15px;
+	width: auto;
+	display: block !important;
+	border-bottom: 2px dotted black;
+}
+
+.first-second{
+
+	overflow: hidden;
+}
+
+.first-box{
+
+	float: left;
+	margin-right: 5px;
+}
+
+.second-box{
+
+	overflow: hidden;
+}
+
+.third-box{
+
+	float: right;
+	margin-left: 5px;
+}
+
+.tiny-p-right{
+
+	font-size: 0.625rem;
+	margin-right: 8px;
+}
+
+.tiny-p-left{
+
+	font-size: 0.625rem;
+	margin-right: 0px;
+}
+
+.first-box .tiny-p-left,
+.third-box .tiny-p-right{
+
+	font-weight: normal;
+}
+
+.solid-line{
+
+	border-top: 2px solid black;
+	padding-bottom: 20px;
+}
+
+.simu-details .detail-line:first-child{
+
+	padding-top: 1.5625rem;
+}
+
+.simu-details .detail-line{
+
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+}
+
+.simu-details .whiteBox{
+
+	padding-top: 0rem;
+	padding-right: 1.5rem;
+	padding-left : 1.5rem;
+	padding-bottom: 2rem;
+}
+
+.dotted-line,
+.simu-details p{
+
+	display: inline-block;
+}
+
+.simu-details .cta-container{
+
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -1.5625rem;
+}
+
+.simu-details .cta-container .button{
+
+	margin-bottom: 0.3125rem;
+	padding: 1.12rem 2.18rem 1.12rem 2.18rem;
+}
+
+.exemple-column{
+
+	margin-top: 50px;
+}
+
+.exemple-title{
+
+	font-size: 1.375rem;
+	margin-bottom: 1.5rem;
+	text-align: left;
+}
+
+.newcr .exemple-title:before{
+	display:none;
+}
+
+.simu-exemple{
+
+	background-color: #F0F0F0;
+	padding: 70px 20px 165px 50px;
+}
+
+.simu-exemple p{
+
+	font-size: 14px;
+	text-align: left;
+	margin-bottom: 3px;
+}
+
+.newcr .exemple-small-title.creditRenouvelable{
+
+	line-height: 16px;
+}
+
+.simu-exemple .exemple-small-title,
+.simu-third-row .exemple-small-title{
+
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 10px 0px;
+}
+
+.sm2{
+
+	line-height: 15px; 
+}
+
+.simu-exemple .exemple-small-title.credit,
+.step1-container.credit .exemple-small-title,
+.step2-container.credit .exemple-small-title,
+.step3-container.credit .exemple-small-title{
+
+	color: #00a0d7;
+}
+
+.steps-title{
+
+	margin-bottom: 25px;
+	margin-top: 20px;
+}
+
+.step1-container .exemple-small-title,
+.step2-container .exemple-small-title,
+.step3-container .exemple-small-title{
+
+	max-width: 200px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.step1-container,
+.step2-container,
+.step3-container{
+
+	text-align: center;
+	margin-top: -20px;
+}
+
+.exemple-small-title.line-2{
+
+	margin-top: 0px;
+}
+
+.simu-exemple p span{
+
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+.simu-exemple .exemple-small-title span{
+
+	text-transform: none;
+	font-size: 0.625rem;
+}
+
+.remboursez{
+
+	margin-bottom: 0px;
+}
+
+.simu-exemple .legal{
+
+	line-height: 12px;
+	padding-right: 10px;
+}
+
+.simu-exemple .chevron{
+
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.simu-third-row .number p{
+
+	color: white;
+	margin-bottom: 0px;
+	line-height: 4.8125rem;
+	font-size: 2.25rem;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.simu-third-row .step1-container.credit .number,
+.simu-third-row .step2-container.credit .number,
+.simu-third-row .step3-container.credit .number{
+
+	border-radius: 50%;
+	width: 4.8125rem;
+	height: 4.8125rem;
+	display: inline-block;
+	background-color: #00a0d7;
+}
+
+.simu-step1,
+.simu-step2,
+.simu-step3{
+
+	display: inline-block;
+	text-align: center;
+}
+
+.simu-legal .legalNoticePP{
+
+	margin-bottom: 10px;
+}
+
+.simu-mensualites .slick-prev:before, .simu-mensualites .slick-next:before{
+
+	background-color: transparent;
+	color: #96bf31;
+	box-shadow: 0 0 0 2px #96bf31;
+	opacity: 1;
+}
+
+.simu-mensualites .slick-prev:hover:before, .simu-mensualites .slick-next:hover:before{
+
+	background-color: #96bf31;
+	color: white;
+	border-color: #96bf31;
+	box-shadow: 0 0 0 2px #96bf31;
+}
+
+.simu-mensualites .slide{
+
+	background-color: white;
+	border-radius: 5px;
+	display: inline-block;
+	margin-left: 4px;
+	margin-right: 4px;
+	text-align: center;
+	/*max-width: 100px;*/
+	position: relative;
+}
+
+.simu-mensualites .slide:hover{
+
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+
+.simu-mensualites .slide:hover p{
+
+	color: #96bf31;
+}
+
+.simu-mensualites .slide:hover .solid-line{
+
+	border-color: #96bf31;
+}
+
+.simu-mensualites .slide p{
+
+	color: black;
+}
+
+.simu-mensualites .slide.active:after{
+
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 38%;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 20px solid #96c031;
+	transform: rotate(-50deg) ;
+	-webkit-transform: rotate(-50deg) ;
+	-moz-transform: rotate(-50deg) ;
+	-o-transform: rotate(-50deg) ;
+	-ms-transform: rotate(-50deg) ;
+}
+
+.simu-mensualites .slick-prev {
+    
+  left: -33px;
+}
+
+.simu-mensualites .slick-next {
+    
+  right: -33px;
+}
+
+.simu-mensualites .slick-track {
+    
+  padding: 2% 0 5% 0;
+}
+
+.simu-mensualites.cetelem .slide.active{
+
+	background-color: #96bf31;
+}
+
+.simu-mensualites.cetelem .slide.active .solid-line{
+
+	border-color: white;
+}
+
+.simu-mensualites.cetelem .slide.active p{
+
+	color: white;
+}
+
+.line1{
+
+	font-size: 18px;
+	margin-bottom: 0px;
+	padding-top: 35px;
+}
+
+.line2{
+
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.line3{
+
+	font-size: 18px;
+}
+
+.simu-mensualites .solid-line{
+
+	display: inline-block;
+	width: 75%;
+}
+
+.simu-slider{
+
+	margin-left: 4.2%;
+}
+
+.infobulle{
+
+	width: 18px;
+	height: 18px;
+	color: white;
+	text-align: center;
+	background-color: #9B9B9B;
+	border-radius: 18px;
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 0.8rem;
+	position: relative;
+}
+
+.infobulle .infobulle-text{
+
+	visibility: hidden;
+	width: 250px;
+	background-color: #9B9B9B;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 8;
+}
+
+.info4,
+.info5,
+.info6{
+
+	float: left;
+	margin-left: -2px;
+	position: absolute;
+
+}
+
+.info1 .infotext1{
+
+	top: -345%;
+	right: 175%;
+}
+
+.info2 .infotext2{
+
+	top: -453%;
+	right: 177%;
+}
+
+.info3 .infotext3{
+
+	top: -540%;
+	right: 175%;
+}
+
+
+.info4 .infotext4{
+
+	top: -240%;
+	left: 175%;
+}
+
+.info5 .infotext5{
+
+	top: -240%;
+	left: 175%;
+}
+
+.info6 .infotext6{
+
+	top: -240%;
+	left: 175%;
+}
+
+.simu-details .detail-line .infobulle.info4 .infotext4,
+.simu-details .detail-line .infobulle.info5 .infotext5,
+.simu-details .detail-line .infobulle.info6 .infotext6{
+
+	color: white;
+}
+
+.infobulle.ncr-bulle .infobulle-text:before{
+
+	top: 45%;
+}
+
+.info1.ncr-bulle .infotext1:before{
+
+	top: 30%;
+	right: -5%;
+}
+
+.info2.ncr-bulle .infotext2{
+
+	top: -440%;
+   right: -1470%;
+}
+
+.info2.ncr-bulle .infotext2:before{
+
+	left: -5%;
+	border-width: 10px 20px 10px 0;
+	border-color: transparent #9B9B9B transparent transparent;
+}
+
+.info3.ncr-bulle .infotext3{
+
+	top: -185%;
+	right: -1470%;
+}
+
+.info3.ncr-bulle .infotext3:before{
+
+	left: -5%;
+	top: 40%;
+	border-width: 10px 20px 10px 0;
+	border-color: transparent #9B9B9B transparent transparent;
+}
+
+.info4.ncr-bulle .infotext4{
+
+	top: -475%;
+	right: -1465%;
+	left: auto;
+}
+
+.info4.ncr-bulle .infotext4:before{
+
+	left: -5%;
+	top: 43%;
+	border-width: 10px 20px 10px 0;
+	border-color: transparent #9B9B9B transparent transparent;
+}
+
+.info5.ncr-bulle .infotext5{
+
+	top: -540%;
+	right: -1470%;
+}
+
+.info5.ncr-bulle .infotext5:before{
+
+	left: -5%;
+	top: 40%;
+	border-width: 10px 20px 10px 0;
+	border-color: transparent #9B9B9B transparent transparent;
+}
+
+.info6.ncr-bulle .infotext6{
+
+	top: -550%;
+	right: -1450%;
+}
+
+.info6.ncr-bulle .infotext6:before{
+
+	left: -5%;
+	top: 50%;
+	border-width: 10px 20px 10px 0;
+	border-color: transparent #9B9B9B transparent transparent;
+}
+
+.infobulle .infobulle-text:before{
+
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	position: absolute;
+	top: 40%;
+}
+
+.info1 .infotext1:before{
+
+	right: -4%;
+	border-width: 10px 0px 10px 20px;
+	border-color: transparent transparent transparent #9B9B9B;
+}
+
+
+.info4 .infotext4:before,
+.info5 .infotext5:before,
+.info6 .infotext6:before{
+
+	left: -4%;
+	border-width: 10px 20px 10px 0;
+	border-color: transparent #9B9B9B transparent transparent;
+}
+
+.info2 .infotext2:before,
+.info3 .infotext3:before{
+
+	right: -4%;
+	border-width: 10px 0 10px 20px;
+	border-color: transparent transparent transparent #9B9B9B;
+
+}
+
+.info1:hover .infotext1,
+.info2:hover .infotext2,
+.info3:hover .infotext3,
+.info4:hover .infotext4,
+.info5:hover .infotext5,
+.info6:hover .infotext6{
+
+	visibility: visible;
+}
+
+.exemple-desktop{
+
+	display: inline-block;
+}
+
+.exemple-tablet{
+
+	display: none;
+}
+
+.linebreak{
+
+	display: none;
+}
+
+.tiny-desktop{
+
+	display: inline-block;
+}
+
+.tiny-mobile{
+
+	display: none;
+}
+
+.section-desktop{
+
+	display: block;
+}
+
+.section-mobile{
+
+	display: none;
+}
+
+.slick-slide{
+
+	outline: none !important;
+}
+
+.simu-qtip{
+
+	border: 0px solid white !important;
+	background-color: white !important;
+	width: 100% !important;
+	height: 15% !important;
+	max-width: none !important;
+	margin-top: -5px !important;
+}
+
+.simu-qtip .qtip-content{
+
+	background-color: white !important;
+	position: absolute !important;
+	top: 25% !important;
+	left: 0% !important;
+	font-size: 19px !important;
+
+}
+
+.simu-qtip .qtip-content p{
+
+	font-size: 1rem !important;
+	color: black !important;
+	text-align: center !important;
+	padding: 0 25px !important;
+}
+
+.simu-qtip .qtip-content p:nth-child(2){
+
+	display: none !important;
+}
+
+.simu-overlay div{
+
+	opacity: 0 !important;
+	background-color: transparent !important;
+}
+
+.simu-qtip .qtip-tip{
+
+	display: none !important;
+}
+
+.simu-qtip .qtip-close{
+
+	position: absolute !important;
+	top: 10% !important; 
+	right: 15% !important;
+	font-size: 60px !important;
+	color: black !important;
+}
+
+.simu-qtip .qtip-close:active{
+
+	background-color: white !important;
+	border: 0 solid white !important;
+}
+
+.simu-qtip .qtip-icon{
+
+	background: none !important;
+	border-color: white !important;
+}
+
+.infotitle{
+
+	display: none;
+}
+
+.simu-faq .lexi-cntr .accordion .accordion-navigation>a{
+
+	background: transparent !important;
+	padding: 0.5rem;
+}
+
+.simu-faq .accordion{
+
+	border-top: 1px solid #bebebe !important;
+}
+
+.simu-faq{
+
+	display: none;
+}
+
+.simu-montant{
+
+	position: relative;
+}
+
+.info1 .infotext1:before {
+
+	top: 25%;
+}
+
+.info2 .infotext2:before {
+
+	top: 40%;
+}
+
+.info3 .infotext3:before {
+
+	top: 40%;
+}
+
+.info4 .infotext4:before {
+
+	top: 25%;
+}
+
+.info5 .infotext5:before {
+
+	top: 50%;
+}
+
+.info6 .infotext6:before {
+
+	top: 22%;
+} 
+
+.credito-pouce{
+
+	min-height: 165px;
+	left: -8%;
+	bottom: -63px;
+}
+
+.simu-montant{
+
+	position: relative;
+}
+
+.simu-montant .whiteBox{
+
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+} 
+
+.simu-slider .slider-container{
+
+	margin-top: -8px;
+}
+
+.simu-third-row .whiteBox{
+
+	border-radius: 5px;
+}
+
+/*============================================================ NEWCR DESKTOP ============================================================*/
+
+.simu-title.creditRenouvelable,
+.detail-line.creditRenouvelable{
+	
+	color: #1AA4A7;
+}
+
+.dotted-line.creditRenouvelable{
+
+	border-bottom: 2px dotted #1AA4A7;
+}
+
+.mtd .taux-taeg span{
+
+  font-size: 3rem;
+}
+
+.simu-taux.mtd .whiteBox .box-taeg{
+
+  text-align: center;
+}
+
+.simu-taux.mtd .whiteBox .box-taeg .m-font{
+
+  margin-bottom: 38px;
+}
+
+.last-month{
+
+  display: block;
+}
+
+.newcr .info2,
+.newcr .info3{
+
+  float: left;
+  margin-left: -2px;
+  position: absolute;
+}
+
+.doublemonth{
+
+	line-height: 15px;
+	text-align: right;
+	margin-top: -10px;
+}
+
+.newcr .assurance-title sup{
+
+	font-weight: normal;
+	font-size: 0.875rem;
+}
+
+.newcr .m-font.line-2{
+
+	margin-bottom: 0px;
+}
+
+.step1-container.creditRenouvelable .exemple-small-title,
+.step2-container.creditRenouvelable .exemple-small-title,
+.step3-container.creditRenouvelable .exemple-small-title,
+.step4-container.creditRenouvelable .exemple-small-title{
+
+	color: #1AA4A7;
+}
+
+.step1-container.creditRenouvelable,
+.step2-container.creditRenouvelable,
+.step3-container.creditRenouvelable,
+.step4-container.creditRenouvelable{
+
+	margin-top: 15px;
+	position: relative;
+}
+
+.simu-details-container .newcr .legalNoticePP{
+
+	margin-top: 10px;
+}
+
+.newcr .simu-exemple{
+
+	padding: 30px 10px 30px 50px;
+}
+
+.newcr .exemple-title{
+
+	font-size: 1.3rem;
+}
+
+.simu-exemple .exemple-small-title.creditRenouvelable{
+
+	color: #1AA4A7;
+}
+
+.mtd .cta-container .m-font{
+
+	margin-bottom: 0px;
+}
+
+.ncr .slide{
+
+	min-width: 82px;
+}
+
+.ncr .simu-mensualites{
+
+	margin: 0px 10px;
+}
+
+.ncrduree{
+
+	margin-left: 4px;
+}
+
+.line1.ncr{
+
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+.line1.ncr span{
+
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.slider-container-ncrmonth .solid-line{
+
+	padding-bottom: 10px;
+}
+
+.lineprice{
+
+	padding-top: 0px;
+	margin-bottom: 0px;
+}
+
+.linemonth{
+
+	margin-bottom: 10px;
+}
+
+.ncr .simu-montant .whiteBox{
+
+	padding-bottom: 4.5rem;
+}
+
+.mtd.simu-taux .whiteBox{
+
+	padding: 0.625rem 1rem 0.5rem 1.56rem;
+}
+
+.ncr .credito-pouce{
+
+	bottom: -30%;
+}
+
+.simu-montant-container.ncr{
+
+	position: relative;
+}
+
+.creditRenouvelable .simu-step3{
+
+	width: 100%;
+}
+
+.ncr .simu-mensualites .slide{
+
+	padding-bottom: 6px;
+}
+
+.ncr .simu-taux.mtd .whiteBox .box-taeg .m-font:nth-child(1){
+
+	margin-bottom: -5px; 
+}
+
+.ncr .simu-taux.mtd .whiteBox .box-taeg .m-font:nth-child(2){
+
+	margin-bottom: 0px;
+	margin-top: -10px;
+}
+
+.ncr .simu-taux.mtd .whiteBox .box-taeg .m-font:nth-child(3){
+
+	margin-bottom: 5px;
+	margin-top: -6px;
+}
+
+.simu-details .newcr .cta-container .m-font{
+	
+	margin-bottom : 15px;
+}
+
+.box-deb{
+
+	text-align: center
+}
+
+.pp-link{
+	
+	display: block;
+}
+
+.simu-title.creditRenouvelable,
+.detail-line.creditRenouvelable{
+
+	color: #1AA4A7;
+}
+
+.dotted-line.creditRenouvelable{
+
+	border-bottom: 2px dotted #1AA4A7;
+}
+
+.mtd .taux-taeg span{
+
+	font-size: 3rem;
+}
+
+.simu-taux.mtd .whiteBox .box-taeg{
+
+	text-align: center;
+}
+
+.simu-taux.mtd .whiteBox .box-taeg .m-font{
+
+	margin-bottom: 38px;
+}
+
+.last-month{
+
+	display: block;
+}
+
+.newcr .info2,
+.newcr .info3{
+
+	float: left;
+	margin-left: -2px;
+	position: absolute;
+}
+
+.doublemonth{
+
+	line-height: 15px;
+	text-align: right;
+	margin-top: -10px;
+}
+
+.newcr .assurance-title sup{
+
+	font-weight: normal;
+	font-size: 0.875rem;
+}
+
+.newcr .m-font.line-2{
+
+	margin-bottom: 0px;
+}
+
+.step1-container.creditRenouvelable .exemple-small-title,
+.step2-container.creditRenouvelable .exemple-small-title,
+.step3-container.creditRenouvelable .exemple-small-title,
+.step4-container.creditRenouvelable .exemple-small-title{
+
+	color: #1AA4A7;
+}
+
+.step1-container.creditRenouvelable,
+.step2-container.creditRenouvelable,
+.step3-container.creditRenouvelable,
+.step4-container.creditRenouvelable{
+
+	margin-top: 15px;
+	position: relative;
+}
+
+.simu-details-container .newcr .legalNoticePP{
+
+	margin-top: 10px;
+}
+
+.newcr .simu-exemple{
+
+	padding: 30px 10px 30px 50px;
+}
+
+.newcr .exemple-title{
+
+	font-size: 1.3rem;
+}
+
+.simu-exemple .exemple-small-title.creditRenouvelable{
+
+	color: #1AA4A7;
+}
+
+.mtd .cta-container .m-font{
+
+	margin-bottom: 0px;
+}
+
+.ncr .slide{
+
+	min-width: 82px;
+}
+
+.ncr .simu-mensualites{
+
+	margin: 0px 10px;
+}
+
+.ncrduree{
+
+	margin-left: 4px;
+}
+
+.line1.ncr{
+
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+.line1.ncr span{
+
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.slider-container-ncrmonth .solid-line{
+
+	padding-bottom: 10px;
+}
+
+.lineprice{
+
+	padding-top: 0px;
+	margin-bottom: 0px;
+}
+
+.linemonth{
+
+	margin-bottom: 10px;
+}
+
+.ncr .simu-montant .whiteBox{
+
+	padding-bottom: 4.5rem;
+}
+
+.mtd.simu-taux .whiteBox{
+
+	padding: 0.625rem 1rem 0.5rem 1.56rem;
+}
+
+.ncr .credito-pouce{
+
+	bottom: -30%;
+}
+
+.simu-montant-container.ncr{
+
+	position: relative;
+}
+
+.creditRenouvelable .simu-step3{
+
+	width: 100%;
+}
+
+.simu-step4{
+
+	text-align: center;
+}
+
+.simu-step4 .exemple-small-title{
+
+	margin-bottom: 0px;
+}
+
+.details-ml{
+
+	margin-top: 15px;
+	margin-bottom: 45px;
+	margin-left: 60px;
+	margin-right: 60px;
+	text-align: center;
+}
+
+.simu-details .cta-container .m-font{
+
+	display: block;
+	margin-bottom: 8px;
+}
+
+.simu-slider.dts{
+	
+	margin-left: 0%;
+}
+
+.slider-container-dts .line1{
+
+	padding-top: 0px;
+}
+
+.slider-container-dts .line2{
+
+	padding-bottom: 16px;
+	margin-bottom: 0px;
+}
+
+.slider-container-dts .line3{
+
+	margin-top: 25px;
+}
+
+.ncr .slider-container-dts .slide{
+
+	min-width: 94px;
+	padding-bottom: 0px;
+}
+
+.slider-container-dts .line3 span:first-child{
+
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.simu-details-container .simu-details .ml{
+
+	margin-top: 10px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 35px;
+}
+
+.tbl-column{
+
+	display: table-column;
+}
+
+.tbl-row{
+
+	display: table-row;
+}
+
+
+.newcr-tc{
+
+background-color: white;
+
+font-weight: bold;
+
+border-bottom: 1px solid #DFDFDF;
+
+text-align: center;
+
+padding: 8px 45px;
+
+font-size: 0.9rem;
+
+vertical-align: middle;
+}
+
+.newcr-tc p{
+
+	font-weight: bold;
+	font-size: 0.9rem;
+	margin-bottom: 0px;
+}
+
+.newcr-tc span{
+
+	font-weight: normal;
+}
+
+.row1{
+
+	background-color: transparent;
+	border: 0px solid #d1d1d1;
+}
+
+.row2{
+
+	border-top-left-radius: 5px;
+	border-right: none;
+	text-align: right;
+	padding-right: 0px;
+	border-left: 1px solid  #DFDFDF;
+	border-top: 1px solid  #DFDFDF;
+	position: relative;
+	height: 40px;
+	vertical-align: initial;
+}
+
+.row2 p{
+
+	position: absolute;
+	right: -45%;
+}
+
+.row3{
+
+	border-top-right-radius: 5px;
+	border-left: none;
+	text-align: left;
+	padding-left: 5px;
+	border-right: 1px solid  #DFDFDF;
+	border-top: 1px solid  #DFDFDF;
+	vertical-align: initial;
+}
+
+.ncr-tauxTable div .newcr-tc:first-child{
+
+	border-left: 1px solid  #DFDFDF;
+	line-height: 15px;
+}
+
+.ncr-tauxTable div:nth-child(1) .newcr-tc:first-child{
+
+	border-left: 0px solid  #DFDFDF;
+}
+
+.ncr-tauxTable div .newcr-tc:last-child{
+
+	border-right: 1px solid  #DFDFDF;
+}
+
+.ncr-tauxTable div .newcr-tc:nth-child(2){
+
+	border-left: 1px solid  #DFDFDF;
+}
+
+.ncr-tauxTable div:last-child .newcr-tc:first-child{
+
+	border-bottom-left-radius: 5px;
+}
+
+.ncr-tauxTable div:nth-child(2) .newcr-tc:first-child{
+
+	border-top-left-radius: 5px;
+}
+
+.ncr-tauxTable div:nth-child(2) .newcr-tc{
+
+	background-color: #1aa4a7;
+	color: white;
+}
+
+.ncr-tauxTable div:last-child .newcr-tc:first-child{
+
+	border-bottom-left-radius: 5px;
+	border-left: 1px solid  #DFDFDF;
+	border-bottom: 1px solid  #DFDFDF;
+}
+
+.ncr-tauxTable div:last-child .newcr-tc:last-child{
+
+	border-bottom-right-radius: 5px;
+}
+
+.ncr-emi-tbl .row2 p{
+
+	position: absolute;
+	right: -37%;
+}
+
+.ncr-emi-tbl div:nth-child(2) .newcr-tc:first-child{
+
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.sommeTable .row2 p{
+
+	right: -50%;
+}
+
+.simu-third-row .steps-title{
+
+	text-align: left;
+}
+
+.table-ml{
+
+	margin-top: 10px;
+}
+
+.simu-middle-row .tauxTable{
+
+	float: left;
+}
+
+.simu-middle-row .tauxTable .ncr-tauxTable{
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*============================== SIMULATOR ==============================*/
+
+#credit-renouvelable-simulateur-montant-amount-value,
+#credit-renouvelable-simulateur-montant-monthly-amount-value{
+
+	max-width: 120px;
+	float: right;
+}
+
+#credit-renouvelable-simulateur-montant .sliderContainer h3{
+
+	font-weight: normal;
+	font-size: 1.1rem;
+	min-width: 200px;
+}
+
+.panel.creditRenouvelable.active .simTitle{
+
+	margin-bottom: 20px !important;
+}
+
+#credit-renouvelable-simulateur-montant{
+
+	display: block !important;
+}
+
+#credit-renouvelable-simulateur-montant .switcher{
+
+	border-radius: 5px;
+}
+
+.switcher-container{
+
+	padding-left: 0.875rem !important;
+	padding-right: 0.875rem !important;
+}
+
+.switch-duree,
+.switch-mensualite{
+
+	display: inline-block;
+	background-color: white;
+	width: 50%;
+	text-align: center;
+	border: 1px solid #1AA4A7;
+	padding: 5px 0px;
+	cursor: pointer;
+	position: relative;
+}
+
+.switch-duree.active,
+.switch-mensualite.active
+{
+
+	background-color: #1AA4A7;
+	color: white;
+}
+
+.switch-duree:hover,
+.switch-mensualite:hover{
+
+	color: #1AA4A7;
+}
+
+.switch-duree.active:hover,
+.switch-mensualite.active:hover{
+
+	color: white;
+}
+
+.switch-mensualite.active:after{
+
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 42%;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 20px solid #1AA4A7;
+	transform: rotate(-50deg);
+	-webkit-transform: rotate(-50deg);
+	-moz-transform: rotate(-50deg);
+	-o-transform: rotate(-50deg);
+	-ms-transform: rotate(-50deg);
+}
+
+.switch-duree.active:after{
+
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 43%;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 20px solid #1AA4A7;
+	transform: rotate(-50deg);
+	-webkit-transform: rotate(-50deg);
+	-moz-transform: rotate(-50deg);
+	-o-transform: rotate(-50deg);
+	-ms-transform: rotate(-50deg);
+}
+
+.switch-duree{
+
+	border-right: 0px solid #1AA4A7;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.switch-mensualite{
+
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#credit-renouvelable-simulateur-montant .switcher .switch-duree p,
+#credit-renouvelable-simulateur-montant .switcher .switch-mensualite p{
+
+	font-size: 1.2rem;
+}
+
+.duree-time,
+.duree-price{
+
+	display: inline-block;
+}
+
+.duree-div{
+
+	border-radius: 5px;
+	padding: 0px 10px;
+}
+
+.duree-div:hover{
+
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+
+.duree-div.active{
+
+	background-color: white;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.4);
+}
+
+.duree-div.active .duree-time{
+
+	color: #1AA4A7;
+	font-weight: bold !important;
+}
+
+.duree-div .step{
+
+	display: inline-block;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border: 3px solid #1AA4A7;
+	border-radius: 500px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: -3px;
+	margin-right: 5px;
+}
+
+.duree-div.active .step-core{
+
+	width: 10px;
+	height: 10px;
+	border-radius: 500px;
+	background-color: #1AA4A7;
+	left: 2px;
+	top: 1.4px;
+	position: absolute;
+}
+
+.newcr-duree{
+
+	margin-top: 10px;
+}
+
+.newcr-mensualite{
+
+	margin-top: 10px;
+}
+
+.newcr-duree,
+.newcr-mensualite{
+
+	display: none;
+	margin-bottom: 10px;
+}
+
+.newcr-mensualite-input{
+
+	float: right;
+}
+
+#credit-renouvelable-simulateur-montant .newcr-duree .duree-div .duree-price{
+
+	font-size: 0.875rem;
+	float: right;
+}
+
+#credit-renouvelable-simulateur-montant .newcr-duree .duree-div.active .duree-price{
+
+	font-weight: bold;
+
+}
+
+#credit-renouvelable-simulateur-montant .newcr-duree .duree-div .duree-time{
+
+	font-size: 0.875rem;
+}
+
+.newcr-mensualite{
+
+	display: none;
+}
+
+.newcr-noLeftPadding{
+
+	padding-left: 0px !important;
+}
+
+.simu-step4{
+
+	text-align: center;
+}
+
+.simu-step4 .exemple-small-title{
+
+	margin-bottom: 0px;
+}
+
+/*==================== Sprite Image Start ====================*/
+.modifier:before{
+ 
+	content: "";
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat; 
+	width: 0px; 
+	height: 25px; 
+	background-position: -375px -2px; 
+	padding: 5px; 
+	position: absolute; 
+	top: 15%; 
+	left: 2%;
+}
+ 
+.modifier:hover:before{
+ 
+	content: "";
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-position: -322px -37px;
+	width: 0px;
+	height: 25px;
+}
+ 
+.credito-pouce{
+
+	min-height: 160px;
+	min-width: 163px;
+	position: absolute;
+	left: -8%;
+	bottom: -29%;
+	background-image: url('../../new-img/sprites/ncr_sprite.png');
+	background-repeat: no-repeat;
+	background-position: -4px -5px;
+}
+ 
+.simu-mensualites .slick-prev:before{
+ 
+	content: "";
+	background-image: url('../../new-img/sprites/ncr_sprite.png');
+	background-repeat: no-repeat;
+	background-position: -315px -40px;
+}
+ 
+.simu-mensualites .slick-next:before{
+ 
+	content: "";
+	background-image: url('../../new-img/sprites/ncr_sprite.png');
+	background-repeat: no-repeat;
+	background-position: -295px -40px;
+}
+ 
+.simu-mensualites .slick-prev:hover:before{
+ 
+	content: "";
+	background-image: url('../../new-img/sprites/ncr_sprite.png');
+	background-repeat: no-repeat;
+	background-position: -315px -4px;
+ 
+}
+ 
+.simu-mensualites .slick-next:hover:before{
+ 
+	content: "";
+	background-image: url('../../new-img/sprites/ncr_sprite.png');
+	background-repeat: no-repeat;
+	background-position: -295px -4px;
+}
+ 
+.simu-details .print-icon{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 62% 23%;
+ 
+}
+ 
+.simu-details .print-icon:hover{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 62% -2%;
+}
+ 
+.simu-details .msg-icon{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 45% 26%;
+}
+ 
+.simu-details .msg-icon:hover{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 45% -2%;
+}
+ 
+.simu-details .tlg-icon{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 53.4% 25%;
+}
+ 
+.simu-details .tlg-icon:hover{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 53.4% -2%;
+}
+ 
+.simu-details .shr-icon{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 69.9% 25%;
+	display: none;
+}
+ 
+.simu-details .shr-icon:hover{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 69.9% -1%;
+}
+ 
+.simu-exemple .chevron{
+
+	width: 30px;
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-position: 87% 0%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	height: 30px;
+}
+ 
+.picto-step1{
+ 
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 63.4% 62%;
+	width: 60px;
+	height: 60px;
+	margin-left: 34px;
+}
+ 
+.picto-step2{
+ 
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 98.8% 62%;
+	width: 60px;
+	height: 60px;
+	margin-left: 42px;
+}
+ 
+.picto-step3{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 80% 62%;
+	width: 60px;
+	height: 60px;
+	margin-left: 38%;
+}
+ 
+.picto-step4{
+ 
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 47% 62%;
+	width: 60px;
+	height: 60px;
+	margin-left: 38%;
+}
+ 
+.step1-container.creditRenouvelable:after,
+.step2-container.creditRenouvelable:after,
+.step3-container.creditRenouvelable:after{
+ 
+	content: "";
+	background-image: url(../../new-img/sprites/ncr_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 85% 28%;
+	width: 20px;
+	height: 22px;
+	position: absolute;
+	top: 25%;
+   left: 95%;
+}
+
+/*==================== CARD CHOICE PAGES ====================*/
+
+.ncrcard-title{
+	
+	font-size: 1.7rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ncrcard-title.ncr{
+	
+	color: #1aa4a7;
+}
+
+.thin-title{
+
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.ccm-title-container{
+
+	text-align: center;
+	margin-bottom: 35px;
+}
+
+.picto-card{
+
+	background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    background-position: -101px -3px;
+    background-size: 675%;
+    width: 70px;
+    height: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-top: 40px;
+}
+
+.ccm{
+
+	font-weight: bold;
+	display: block;
+}
+
+.ccm,
+.thin-title.ncr{
+
+	color: #1aa4a7;
+}
+
+.ccm-title{
+
+	margin-bottom: 0px;
+}
+
+.ccm,
+.ccm-title{
+
+	font-size: 	1.375rem;
+}
+
+.ccm-benefices{
+
+	background-color: white;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.ccm-benefices p{
+
+	margin-bottom: 0px;
+}
+
+.bold-title{
+
+	font-weight: bold;
+	font-size: 1.375rem;
+}
+
+.liste-title{
+
+	font-size: 1.063em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+.mastercard-table-container{
+
+	float: right !important;
+}
+
+.mastercard .avantages{
+
+	margin-bottom: 20px;
+}
+
+.mastercard .avantage3{
+
+	margin-bottom: 15px;
+}
+
+.choice-table-top{
+
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	height: 75px;
+	line-height: 85px;
+	position: relative;
+}
+
+.choice-table-title{
+
+	color: white;
+	letter-spacing: 5px;
+	margin-bottom: 0px;
+	display: inline-block;
+}
+
+.cpay .choice-table-title span{
+
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.cpay .choice-table-top{
+
+	background-color: #399140;
+}
+
+.mastercard .choice-table-top{
+
+	background-color: #4A4A4A;
+}
+
+.choice-table{
+
+	background-color: white;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-radius: 15px;
+}
+
+.avantages{
+
+	text-align: left;
+	margin-left: 30px;
+	margin-right: 30px;
+	position: relative;
+}
+
+.avantages p{
+
+	margin-left: 35px;
+	line-height: 16px;
+}
+
+.avantage1{
+
+	margin-top: 30px;
+}
+
+.choice-table.cpay .avantages .liste-title{
+
+	color: #399140;
+}
+
+.cpay .avantage1:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    background-position: -405px -72px;
+    background-size: 1600%;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: -1px;
+}
+
+.cpay .avantage2:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    background-position: -6px -84px;
+    background-size: 991%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+}
+
+.cpay .avantage3:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    background-position: -5px -61px;
+    background-size: 1059%;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+
+}
+
+.mastercard .avantage1:before{
+
+	content: "";
+	background-image: url(../../new-img/sprites/newcr-cards.png);
+	background-repeat: no-repeat;
+	background-position: -394px -28px;
+    width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 3px;
+	left: 0px;
+}
+
+.mastercard .avantage2:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+	background-position: -96px -5px;
+	background-size: 921%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 6px;
+    left: 0px;
+}
+
+.mastercard .avantage3:before{
+
+	content: "";
+	background-image: url(../../new-img/sprites/newcr-cards.png);
+	background-repeat: no-repeat;
+	background-position: -350px -27px;
+    width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 6px;
+	left: 0px;
+}
+
+.avantage3{
+
+	margin-bottom: 15px;
+}
+
+.avantages p:nth-child(2){
+
+	font-style: italic;
+	margin-top: -5px;
+}
+
+.cpay-table-container{
+
+	padding-right: 30px;
+}
+
+.mastercard-table-container{
+
+	padding-left: 30px;
+}
+
+.cpay-table-container .bold-title{
+
+	display: inline-block;
+}
+
+.medium-br{
+
+	font-weight: bold;
+	display: inline-block;
+}
+
+.cpay-table-container .bold-title,
+.mastercard-table-container .bold-title{
+
+	margin-bottom: 10px;
+	font-size: 1.3rem;
+}
+
+.card-tables{
+
+	margin-top: 30px;
+}
+
+.bolder{
+
+	font-weight: bold;
+}
+
+.voirplus-container{
+
+	display: inline-block;
+	margin-bottom: 25px;
+}
+
+.voirplus-cta{
+
+	padding: 8px 60px;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	font-size: 0.8rem;
+	position: relative;
+	transition: background-color 300ms ease-out;
+}
+
+.voirplus-cta:after{
+
+	content: "";
+    background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    background-position: -433px -26px;
+    position: absolute;
+    right: 12%;
+    top: 15%;
+    height: 20px;
+    width: 20px;
+}
+
+.voirplus-cta:hover{
+
+	color: white;
+}
+
+.cpay .voirplus-cta{
+
+	background-color: #399140;
+}
+
+.cpay .voirplus-cta:hover{
+
+	background-color: #2a6c2f;
+}
+
+.mastercard .voirplus-cta{
+
+	background-color: #4A4A4A;
+}
+
+.mastercard .voirplus-cta:hover{
+
+	background-color: black;
+}
+
+.tiny-p{
+
+	font-size: 0.7rem;
+	margin-bottom: 8px;
+}
+
+.tiny-p.renouvelable{
+
+	margin-bottom: -5px;
+}
+
+.card-radio-container{
+
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px;
+	margin-top: 20px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+	-webkit-box-shadow:  0 2px 4px 0 rgba(0,0,0,0.1);
+	-moz-box-shadow:  0 2px 4px 0 rgba(0,0,0,0.1);
+	border: 2px solid transparent;
+}
+
+.card-radio-container:hover{
+
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 32px -1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 32px -1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 32px -1px rgba(0,0,0,0.2);
+}
+
+.highlighter{
+
+	-webkit-box-shadow: 0px 0px 32px -1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 32px -1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 32px -1px rgba(0,0,0,0.2);
+	border: 2px solid #1aa4a7;
+}
+
+.card-radio-container .capital{
+
+	display: inline-block;
+	margin-bottom: -5px;
+}
+
+.card-radio-container .bold-title{
+
+	margin-bottom: -6px;
+}
+
+.mastercard-png{
+
+	background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    height: 63px;
+    width: 90px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+
+.capital{
+
+	text-transform: uppercase;
+	color: #1aa4a7;
+	font-size: 1.125rem;
+}
+
+.card-radio-container .bold-title{
+
+	font-size: 1.125rem;
+}
+
+.capital-container{
+
+	display: inline-block;
+	margin-bottom: 2px;
+}
+
+.radio-container{
+
+	margin-bottom: 10px;
+}
+
+.radio-container .radio{
+
+	background-color: white;
+	border: 3px solid #1aa4a7;
+	height: 20px;
+	width: 20px;
+	border-radius: 100px;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+.radio-container .radio-label{
+
+	display: inline-block;
+	margin-top: -2px;
+    margin-left: 8px;
+}
+
+.radio-container .radio-label p{
+
+	color: #1aa4a7;
+}
+
+.radio-container .radio-label .label1{
+
+	font-weight: bold;
+	font-size: 1rem;
+	margin-bottom: -5px;
+}
+
+.radio-container .radio-label .label2{
+
+	font-style: italic;
+	margin-bottom: 0px;
+}
+
+.no-card{
+
+	margin-top: 25px;
+}
+
+.no-card .radio-container{
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.ncrcard-previous-next{
+
+	margin-top: 30px;
+}
+
+.ncrcard-previous-next .button{
+
+	width: 100%;
+	padding-top: 1.2rem;
+	padding-bottom: 1.2rem;
+}
+
+.ncrcard-previous-next .prev{
+
+	margin-left: 70px;
+}
+
+.ncrcard-previous-next .next{
+
+	margin-right: 70px;
+}
+
+.card-choice label:before{
+
+	opacity: 0;
+	position: absolute;
+	height: 0;
+	width: 0;
+}
+
+.card-choice input[type="radio"]+label{
+
+	display: block !important;
+	padding-left: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+}
+
+.card-choice input[type="radio"]:checked+label{
+
+	color: #4a4a4a;
+}
+
+.card-choice input[type="radio"]:checked + label .radio-core{
+
+	display: block !important;
+}
+
+.radio-core{
+
+	background-color: #1aa4a7;
+	height: 10px;
+	width: 10px;
+	border-radius: 100px;
+	position: absolute;
+	left: 2px;
+	top: 15%;
+	display: none;
+}
+
+/*============== DETAILS ==============*/
+
+.choice-table .details-title{
+
+	padding: 0px 55px;
+   margin-top: 30px;
+}
+
+.choice-table .details-title p{
+
+	font-size: 1.25rem;
+}
+
+.choice-table .details-title span{
+
+	font-weight: bold;
+}
+
+.details-container{
+
+	padding-top: 65px;
+	position: relative;
+	text-align: left;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.details-container:before{
+
+	top: 5px;
+    left: 45%;
+}
+
+.details-wrapper:after{
+
+	content: "";
+	height: 1px;
+	width: 60px;
+	background-color: #9B9B9B;
+	position: absolute;
+	bottom: -25px;
+	left: 45%;
+}
+
+.details-wrapper:last-child:after{
+
+	content: "";
+	height: 0px;
+	width: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.details-wrapper{
+
+	position: relative;
+	margin-top: 40px;
+}
+
+.wrap1{
+
+	margin-top: 0px;
+}
+
+.detail1.mc:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/mastercard-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -105px 1px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail2.mc:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/mastercard-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -168px -1px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail3.mc:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/mastercard-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -187px 0px;
+    background-size: 575%;
+    width: 70px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail4.mc:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/mastercard-detail-sprite.png);
+    background-repeat: no-repeat;
+	background-position: -11px 2px;
+    background-size: 720%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail1:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -54px 3px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail2:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -5px 0px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail3:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -101px -3px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail4:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -435px 1px;
+    background-size: 1000%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail5:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -149px -4px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail6:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -198px 1px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.detail7:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -249px 1px;
+    background-size: 921%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.cpay .wrap7,
+.mastercard .wrap4{
+
+	padding-bottom: 20px;
+}
+
+.name-detail p sup{
+
+	top: 0px;
+}
+
+.name-detail p{
+
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.cpay .name-detail p{
+
+	color: #399140;
+}
+
+.under-name
+{
+
+	font-size: 1rem;
+	margin-bottom: 20px;
+	line-height: 20px;
+}
+
+.quote{
+
+	padding-left: 20px;
+	position: relative
+}
+
+.quote p{
+
+	color: #9B9B9B;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.quote:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+	background-position: -475px -20px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+	top: -13px;
+    left: -6px;
+}
+
+.last-line{
+
+	font-style: italic;
+}
+
+.plafonds{
+
+	margin-bottom: 5px;
+}
+
+.plafonds.plafond1{
+
+	margin-top: -6px;
+}
+
+.plafonds.plafond2{
+
+	margin-top: -25px;
+}
+
+.plafonds span{
+
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.detail-back{
+
+	width: 100%;
+    height: 50px;
+	line-height: 23px;
+	background-color: transparent;
+	border: 2px solid #6B6B6B;
+	color: #6B6B6B;
+	font-size: 1rem;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.detail-back:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -525px -20px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+	top: 1%;
+    left: 30%;
+}
+
+.detail-back:hover{
+
+	background-color: #6B6B6B;
+	color: white;
+}
+
+.logo-container{
+
+	display: inline-block;
+	position: relative;
+}
+
+.logo-container.cpay{
+
+	width: 50px;
+	height: 50px;
+}
+
+.logo-container.cpay:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/newcr-cards.png);
+    background-repeat: no-repeat;
+    background-position: -302px -107px;
+    background-size: 700%;
+    position: absolute;
+    top: 8px;
+    left: 0%;
+    width: 60px;
+    height: 70px;
+}
+
+.choice-table.mastercard .logo-container:before{
+
+	content: "";
+    background-image: url(../../new-img/sprites/mastercard-detail-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -366px -3px;
+    background-size: 700%;
+    position: absolute;
+    top: 0%;
+    left: 27px;
+    width: 75px;
+    height: 50px;
+}
+
+.mastercard .choice-table-title{
+
+	margin-top: 45px;
+}
+
+.last-line.cpay p{
+
+	margin-bottom: 0px;
+	text-align: left;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.glissants{
+
+	margin-top: -12px;
+}
+
+.last-line.cpay p,
+.last-line.mastercard p{
+
+	font-size: 1rem;
+	font-style: normal;
+}
+
+.last-line.cpay p .big-digit,
+.last-line.mastercard p .big-digit{
+
+	font-weight: bold;
+	font-size: 1.6rem;
+}
+
+.details-container.mc{
+
+	margin-bottom: 0px;
+}
+
+.close-cross{
+
+	background-image: url(../../new-img/sprites/cpay-detail-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -345px -8px;
+    background-size: 900%;
+	width: 50px;
+	height: 30px;
+}
+
+.liste-title.voyage{
+
+	margin-top: 10px;
+	margin-right: 60px;
+	margin-bottom: 10px;
+}
+
+.mastercard .avantage1{
+
+	margin-top: 0px;
+}
+
+.mc-voyages{
+
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.close-cross-container{
+
+	float: right;
+}
+
+@media only screen and (max-width: 70em){
+
+	.ncr .simu-taux.mtd .whiteBox .box-taeg .m-font:nth-child(3){
+
+		margin-top: -5px;
+	}
+
+	.info1 .infotext1 {
+ 
+	  top: -500%;
+	  left: 200%;
+	}
+ 
+	.slider-container-dts .line1{
+ 
+		 font-size: 17px;
+	}
+ 
+	.info1 .infotext1:before {
+ 
+	  left: -4%;
+	  top: 46%;
+	  border-width: 10px 20px 10px 0;
+	  border-color: transparent #9B9B9B transparent transparent;
+	}
+ 
+	.info2 .infotext2 {
+ 
+	  top: -340%;
+	  right: 177%;
+	}
+ 
+	.info2 .infotext2:before {
+	
+	  top: 39%;
+	}
+
+   .info3 .infotext3 {
+ 
+	  top: -480%;
+	}
+ 
+	.info3 .infotext3:before {
+	
+	  top: 45%;
+	}
+ 
+	.info4 .infotext4:before {
+	
+	  top: 31%;
+	}
+ 
+	.info5 .infotext5 {
+	
+	  top: -160%;
+	  left: 175%;
+	}
+ 
+	.info5 .infotext5:before {
+	
+	  top: 37%;
+	}
+ 
+	.info6 .infotext6 {
+ 
+	  top: -388%;
+	  left: 175%;
+	}
+ 
+	.info6 .infotext6:before {
+ 
+	  top: 44%;
+	}
+
+   .info1.ncr-bulle .infotext1 {
+      
+      top: -274%;
+   }
+
+   .info2.ncr-bulle .infotext2 {
+      top: -350%;
+   }
+
+   .info4.ncr-bulle .infotext4 {
+      top: -375%;
+   }
+
+   .info5.ncr-bulle .infotext5, .info6.ncr-bulle .infotext6  {
+      top: -440%;
+   }
+ 
+	 .simu-montant .whiteBox {
+		 
+	  padding-left: 3.5rem;
+	 }
+ 
+	 .modifier{
+		 
+	  margin-top: 0px;
+	 }
+ 
+	 .modifier:before{
+		 
+		 top: -32%;
+		 left: 0.4%;
+	 }
+ 
+	 .credito-pouce{
+ 
+	  min-height: 150px;
+		 left: -10%;
+		 bottom: -30px;
+	 }
+ 
+	 .exemple-desktop{
+ 
+		 display: none;
+	 }
+ 
+	 .exemple-tablet{
+ 
+		 display: inline-block;
+	 }
+ 
+	 .simu-details .shr-icon{
+ 
+		 display: block;
+	 }
+ 
+	 .simu-details .print-icon,
+	 .simu-details .msg-icon,
+	 .simu-details .tlg-icon{
+ 
+		 display: none;
+	 }
+ 
+	 .simu-taux h2,
+	 .simu-montant h2,
+	 .simu-mensualites h2{
+ 
+		 font-size: 1.25rem;
+	 }
+ 
+	 .credito-montant{
+ 
+		 top: 18%;
+		 left: -2%;
+	 }
+ 
+	 .box-taeg,
+	 .box-deb{
+ 
+		 text-align: center;
+	 }
+ 
+	 .exemple-tablet{
+ 
+		 margin-top: 0px;
+		 padding-right: 0px;
+	 }
+ 
+	 .simu-exemple{
+ 
+		 padding: 10px;
+	 }
+ 
+	 .exemple-title{
+ 
+		 font-size: 1.4rem;
+		 margin-bottom: 0.5rem;
+	 }
+ 
+	 .simu-exemple .exemple-small-title{
+ 
+		 margin: 0px 0px;
+	 }
+ 
+	 .assurance-container .tiny-p-right{
+ 
+		 display: block;
+	 }
+ 
+	 .simu-details-container .first-box{
+ 
+		 margin-top: 2px;
+	 }
+ 
+	 .assurance-container .first-box,
+	 .assurance-container .third-box{
+ 
+		 max-width: 120px;
+	 }
+ 
+	 .assurance-container .dotted-line{
+ 
+		 margin-top: 16px;
+	 }
+ 
+	 .remboursez,
+	 .lineheight{
+ 
+		 line-height: 20px;
+	 }
+ 
+	 .semibig-span{
+ 
+		 font-size: 18px;
+		 padding-bottom: 20px;
+	  display: inline-block;
+	 }
+ 
+	 .simu-third-row .row.whiteBox{
+ 
+		 padding-right: 10px;
+		 padding-left: 10px;
+	 }
+ 
+	 .simu-taux .cta-container p{
+ 
+		 margin-bottom: 0px;
+	 }
+ 
+	 .linebreak{
+ 
+		 display: block;
+	 }
+ 
+	 .simu-montant-container .simu-montant{
+ 
+		 margin-left: 20px;
+	 }
+ 
+	 .assurance-table.resultTablePP{
+		
+	  margin-top: 25px;
+	 }
+ 
+	 .simu-title {
+		 
+		font-size: 1.5rem;
+	  margin-top: 10px;
+	 }
+	 
+	 .assurance-title{
+ 
+		 line-height: 23px;
+	 }
+	 
+ 
+	 /*============================================================ NEWCR TABLET ============================================================*/
+ 
+	 .newcr .modifier{
+ 
+		 margin-left: 12px;
+	 }
+ 
+	 .newcr .modifier:before{
+ 
+		 top: -15%;
+		 left: 0.4%;
+	 }
+ 
+	 .newcr .simu-title-block{
+ 
+		 margin-top: 10px;
+	 }
+ 
+	 .simu-title.creditRenouvelable{
+ 
+		 font-size: 1.6rem;
+	 }
+ 
+	 .newcr .simu-exemple{
+ 
+		 padding: 10px;
+	 }
+ 
+	 .newcr .simu-exemple .exemple-title{
+ 
+		 margin-bottom: 12px;
+		 font-size: 1.1rem;
+	 }
+ 
+	 .assurance-container sup{
+ 
+		 font-size: 0.825rem;
+	 }
+ 
+	 .assurance-container .semibig-span{
+ 
+		 padding-bottom: 10px;
+	 }
+ 
+	 .assurance-text{
+ 
+		 margin-bottom: 15px;
+	 }
+ 
+	 .third-box{
+ 
+		 margin-bottom: 0px;
+	 }
+ 
+	 .simu-details-container .third-box.doublemonth{
+ 
+		 margin-top: -10px;
+	 }
+ 
+	 .creditRenouvelable .simu-step3{
+ 
+		 width: 115%;
+	 }
+ 
+	 .creditRenouvelable .simu-step4{
+ 
+		 width: 110%;
+	 }
+		 
+	 .ncr .simu-montant .credito-pouce{
+ 
+		 bottom: -15%;
+	 }
+ 
+	.ncr .assurance-table .detail-line .third-box{
+ 
+		 margin-top: 16px;
+	 }
+ 
+	 .ncr .assurance-container .third-box{
+		 
+		 margin-bottom: 0px;
+		 margin-top: 18px;
+	 }
+ 
+	 .ncr .credito-pouce{
+ 
+		 bottom: -10% !important;
+	 }
+ 
+	 .simu-details .cta-container{
+ 
+		 width: 40%;
+	 }
+ 
+	 .newcr .modifier{
+ 
+		 margin-left: 12px;
+	 }
+ 
+	 .newcr .modifier:before{
+ 
+		 top: -15%;
+		 left: 0.4%;
+	 }
+ 
+	 .newcr .simu-title-block{
+ 
+		 margin-top: 10px;
+	 }
+ 
+	 .simu-title.creditRenouvelable{
+ 
+		 font-size: 1.6rem;
+	 }
+ 
+	 .newcr .simu-exemple{
+ 
+		 padding: 10px;
+	 }
+ 
+	 .newcr .simu-exemple .exemple-title{
+ 
+		 margin-bottom: 12px;
+		 font-size: 1.1rem;
+	 }
+ 
+	 .assurance-container sup{
+ 
+		 font-size: 0.825rem;
+	 }
+ 
+	 .assurance-container .semibig-span{
+ 
+		 padding-bottom: 10px;
+	 }
+ 
+	 .assurance-text{
+ 
+		 margin-bottom: 15px;
+	 }
+ 
+	 .creditRenouvelable .simu-step3{
+ 
+		 width: 115%;
+	 }
+ 
+	 .creditRenouvelable .simu-step4{
+ 
+		 width: 110%;
+	 }
+ 
+	 .simu-slider.dts .slider-container-dts .slide{
+		 
+		 min-width: 85px;
+		}
+ 
+	.dts .simu-mensualites{
+		 
+		 margin: 0px 5px;
+		}
+		
+	 /*=============== CARD CHOICE TABLET ===============*/
+ 
+	 .ccm-title{
+ 
+		 margin-bottom: -8px;
+	 }
+ 
+	 .ccm-benefices p:nth-child(2){
+ 
+		 font-size: 0.8rem;
+	 }
+ 
+	 .ncrcard-previous-next .prev{
+ 
+		 margin-left: 0px;
+	 }
+ 
+	 .ncrcard-previous-next .next{
+ 
+		 margin-right: 0px;
+	 }
+ 
+	 /*=============== DETAILS ===============*/
+ 
+	 .choice-table-title{
+ 
+		 font-size: 1rem;
+	 }
+ 
+	 .details-title p br{
+ 
+		 display: none;
+	 }
+ }
+
+ @media only screen and (max-width: 53.813em){
+
+	.medium-br{
+
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 40em) and (max-width: 70em) {
+	
+	.simu-details .cta-container{
+
+		width: 40% !important;
+	}
+}
+
+@media only screen and (max-width: 40em){
+
+	.exemple-title{
+
+		padding-left: 0px;
+   }
+   
+   .simu-montant .montant{
+
+      line-height: 1.6;
+   }
+
+	.taux-deb{
+
+		margin-bottom: 0.5rem;
+	}
+
+	.exemple-title:before{
+
+		left: 0.4rem;
+	}
+
+	.exemple-column.exemple-tablet{
+
+		padding-left: 0px;
+	}
+
+	.simu-taux h2,
+	.simu-montant h2,
+	.simu-mensualites h2{
+
+		text-align: center;
+	}
+
+	.credito-montant{
+
+		display: none;
+	}
+
+	.simu-details .cta-container p{
+
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	.simu-taux .cta-container .button,
+	.simu-details .cta-container .button{
+
+		padding: 0.8rem 1.12rem 0.8rem 1.12rem;
+		font-size: 1rem;
+	}
+
+	.simu-montant-container{
+
+		margin-bottom: 0px;
+	}
+
+	.simu-montant .whiteBox{
+
+		padding-bottom: 0.1rem;
+	}
+
+	.simu-slider{
+
+		margin-left: 0%;
+		margin-top: 5px !important;
+	}
+
+	.simu-title{
+
+		line-height: 25px;
+		font-size: 1.6rem;
+      max-width: 315px;
+      margin-top: 0px;
+	}
+
+	.simu-taux .montant{
+
+		line-height: 1.5;
+	}
+
+	.modifier:before{
+
+		left: -3%;
+	}
+
+	.simu-title-block{
+
+		margin-top: 10px;
+	}
+
+	.simu-exemple{
+
+		padding: 30px;
+		padding-left: 40px;
+		padding-top: 5px;
+	}
+
+	.simu-details .cta-container{
+
+		width: 100%;
+	}
+
+	.simu-details .detail-line{
+
+		margin: 6px auto;
+	}
+
+	.simu-details .details-title{
+
+		max-width: 235px;
+	}
+
+	.creditStepsCRL .details-title{
+
+		max-width: 260px;
+	}
+
+	.shr-icon{
+
+		margin-top: -54px;
+	}
+	
+	.simu-details .whiteBox{
+
+		padding-bottom: 10px;
+	}
+
+	.step1-container{
+
+		margin-top: -35px;
+	}
+
+	.steps-title{
+
+		max-width: 300px;
+		text-align: left;
+	}
+
+	.step1-container .exemple-small-title,
+	.step2-container .exemple-small-title,
+	.step3-container .exemple-small-title{
+
+		font-size: 1rem;
+		max-width: 250px;
+	}
+
+	.ncr .simu-taux.mtd .whiteBox .box-taeg .m-font:nth-child(3){
+
+		height: 60px;
+		margin-top: -25px;
+	}
+
+	.step2-container,
+	.step3-container{
+
+		margin-top: 15px;
+	}
+
+	.tiny-p-right{
+
+		margin-right: 0px;
+		display: block;
+	}
+
+	.credit .tiny-mobile{
+
+		display: block;
+		color: #00a0d7;
+	}
+
+	.tiny-desktop{
+
+		display: none;
+	}
+
+	.ngtv-margintop{
+
+		margin-top: -15px;
+	}
+
+	.exemple-title{
+
+		padding-left: 0;
+	}
+
+	.section-mobile{
+
+		display: block;
+	}
+
+	.section-desktop{
+
+		display: none;
+	}
+
+	.section-slick .column,
+	.section-slick .columns{
+
+		padding: 0;
+		margin: 0;
+	}
+
+	.infobulle .infotext,
+	.infobulle .infotext4,
+	.infobulle .infotext6
+	{
+
+		top: 205%;
+		right: -670%;
+		left: auto;
+	}
+
+	.infobulle .infotext:before,
+	.infobulle .infotext4:before,
+	.infobulle .infotext6:before{
+
+	    left: 40%;
+    	top: -17%;
+    	border-width: 20px 10px 0px 10px;
+	}
+
+	.info1:hover .infotext1,
+	.info2:hover .infotext2,
+	.info3:hover .infotext3,
+	.info4:hover .infotext4,
+	.info5:hover .infotext5,
+	.info6:hover .infotext6{
+
+		visibility: hidden;
+	}
+
+	.infobulle .infotext2{
+
+		top: 205%;
+		right: -145%;
+		left: auto;
+	}
+
+	.infobulle .infotext2:before{
+
+		left: 87%;
+		top: -17%;
+		border-width: 20px 10px 0px 10px;
+	}
+
+	.infobulle .infotext3{
+
+		top: 205%;
+		right: -345%;
+		left: auto;
+	}
+
+	.infobulle .infotext3:before{
+
+		left: 73%;
+		top: -17%;
+		border-width: 20px 10px 0px 10px;
+	}
+
+	.infobulle .infotext5{
+
+		top: 205%;
+		right: -845%;
+		left: auto;
+	}
+
+	.infobulle .infotext5:before{
+
+		left: 27%;
+		top: -17%;
+		border-width: 20px 10px 0px 10px;
+	}
+
+	.simu-mensualites .slide.active:after{
+
+	    left: 40%;
+	}
+
+	.slide{
+
+		width: 120px;
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
+
+	.infotitle{
+
+		display: block;
+		font-weight: bold;
+		font-size: 1.2rem;
+		margin-bottom: 20px;
+	}
+
+	.m-font{
+
+		font-size: 0.9rem !important;
+	}
+
+	.m-font.montant{
+
+		font-size: 30px !important;
+	}
+
+	.assurance-container .first-box, .assurance-container .third-box{
+    	
+		max-width: 145px;
+	}
+
+	.assurance-container .dotted-line {
+    	
+		margin-top: 23px;
+	}
+
+	.simu-faq{
+
+		display: block;
+		padding-left: 0px;
+		padding-right: 0px;
+	} 
+
+	.section-mobile .info2,
+	.section-mobile .info3{
+
+		display: none;
+	}
+
+	.credito-pouce{
+		background-image: none !important;
+	}
+
+	.modifier{
+
+		margin-left: 0px;
+	}
+
+	.spacedTop.legalSection{
+
+		margin-top: 0px !important;
+	}
+
+	.simu-exemple p:nth-child(2){
+
+		margin-top: 0px;
+	}
+
+	.assurance-table .third-box, .assurance-table .first-box{
+
+		margin-bottom: 10px;
+	}
+
+	.exemple-tablet{
+
+		margin-top: 25px !important;
+	}
+
+	.assurance-title{
+
+		margin-top: 10px;
+	}
+
+	.assurance-container .semibig-span{
+
+		padding-bottom: 10px;
+	}
+
+	.simu-third-row .steps-title{
+
+		margin-top: 15px;
+	}
+
+	.modifier:before{
+
+		left: 0% !important;
+	}
+
+	.aPartir{
+
+		visibility: visible;
+	}
+
+	.aPartirHide{
+
+		visibility: hidden;
+	}
+
+	.modifier{
+
+		margin-left: 10px !important;
+	}
+
+	.simu-montant .whiteBox{
+
+		padding-left: 1.5rem;
+	}
+
+	.assurance-container{
+
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.simu-montant-container .simu-montant{
+		
+		margin-left: 0px;
+   }
+   
+   .simu-taux .whiteBox{
+
+      padding: 0.2rem 1rem 1rem 1rem;
+   }
+
+	.simu-montant .whiteBox{
+
+      padding-top: 5px;
+	}
+
+	.simu-montant p.montant{
+
+		margin-bottom: 0px;
+	}
+
+	.taux-taeg span{
+
+		font-size: 2.3rem;
+	}
+
+	.simu-montant-container.spacedTop{
+
+		margin-top: 0rem;
+	}
+
+	.simu-taux .cta-container .button.small{
+	
+		font-size: 1rem;
+	}
+
+	.simu-taux .cta-container .button,
+	.simu-details .cta-container .button {
+                
+		padding: 1rem 1.8rem 1rem 1.8rem !important;
+	}
+
+	.assurance-title{
+
+		line-height: 25px;
+	}
+
+	.credit .tiny-mobile{
+
+		margin-top: 8px;
+	}
+
+
+	/*============================================================ NEWCR MOBILE ============================================================*/
+	
+	.step4-container.creditRenouvelable .simu-step4{
+
+		margin-top: 25px;
+	}
+
+	.step4-container.creditRenouvelable .simu-step4 .exemple-small-title{
+
+		font-size: 1rem;
+	}
+
+	.no-sidepad{
+
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.newcr .box-taeg .taux-taeg{
+
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	.newcr .whiteBox .box-taeg .m-font{
+
+		margin-bottom: 5px;
+	}
+
+	.simu-mensualites .slick-track{
+		
+		padding: 2% 0 5% 0;
+  }
+
+	.newcr .simu-taux .whiteBox{
+
+		padding: 0.625rem 1rem 1.8rem 1.56rem;
+	}
+
+	.creditRenouvelable .simu-step3,
+	.creditRenouvelable .simu-step4{
+
+		width: 100%;
+	}
+
+	.newcr .simu-exemple{
+
+		padding-left: 45px;
+	}
+
+	.newcr .simu-exemple .exemple-title{
+
+		font-size: 1.3rem;
+	}
+	
+	.ncr .assurance-table .detail-line .third-box{
+
+		margin-top: 22px;
+	}
+
+	.newcr .a-partir span{
+
+		font-size: 1.25rem;
+	}
+
+	.step4-container.creditRenouvelable .simu-step4{
+
+		margin-top: 25px;
+	}
+
+	.step4-container.creditRenouvelable .simu-step4 .exemple-small-title{
+
+		font-size: 1rem;
+	}
+
+	.no-sidepad{
+
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.newcr .box-taeg .taux-taeg{
+
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	.newcr .whiteBox .box-taeg .m-font{
+
+		margin-bottom: 5px;
+	}
+
+	.newcr .simu-taux .whiteBox{
+
+		padding: 0.625rem 1rem 1.8rem 1.56rem;
+	}
+
+	.creditRenouvelable .simu-step3,
+	.creditRenouvelable .simu-step4{
+
+		width: 100%;
+	}
+
+	.newcr .simu-exemple{
+
+		padding-left: 35px;
+	}
+
+	.newcr .simu-exemple .exemple-title{
+
+		font-size: 1.2rem;
+	}
+
+	.step1-container.creditRenouvelable:after,
+	.step2-container.creditRenouvelable:after{
+
+		content: "";
+		background-image: url(../../new-img/sprites/ncr_sprite.png);
+		background-repeat: no-repeat;
+		background-position: 93% 28%;
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		top: 95%;
+		left: 47%;
+	}
+ 
+	.step3-container.creditRenouvelable:after{
+
+		content: "";
+		background-image: url(../../new-img/sprites/ncr_sprite.png);
+		background-repeat: no-repeat;
+		background-position: 93% 28%;
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		top: 112%;
+		left: 47%;
+	}
+ 
+	.picto-step3,
+	.picto-step4{
+
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.doublemonth{
+
+		margin-top: -10px;
+	}
+
+	.assurance-table.resultTablePP .third-box{
+
+		margin-top: 3px;
+	}
+
+	.newcr-tc{
+
+		padding: 5px 8.7px;
+	}
+
+	.ncr-emi-tbl .newcr-tc{
+		
+		padding: 5px 5px;
+  }
+
+	.row2{
+
+		height: 33px;
+	}
+	
+	.row2 p{
+	
+      position: absolute;
+      right: -95px;
+	}
+
+	.sommeTable .row2 p {
+		
+		right: -93%;
+  	}
+
+  .ncr-emi-tbl .row2 p{
+
+		right: -85px;
+	}
+	  
+	.ncr-tauxTable div:nth-child(2) .newcr-tc:first-child{
+
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+   .simu-details .newcr .detail-line .first-second{
+
+      position: relative;
+   }
+
+	.simu-details .newcr .detail-line .tiny-p-left.tiny-mobile{
+
+		margin-right: 0px;
+		position: absolute;
+      left: 0px;
+      bottom: 10px;
+      width: 150px;
+		display: inline-block;
+	}
+
+	.newcr .doublemonth{
+
+		margin-top: 6px !important;
+		float: right;
+    	margin-left: 0px;
+	}
+
+	/*=============== CARD CHOICE MOBILE ===============*/
+
+	.last-line.cpay p{
+
+		padding-left: 40px;
+		padding-right: 40px
+	}
+
+	.ncrcard-title{
+
+		font-size: 1.5rem;
+    	line-height: 25px;
+	}
+
+	.ccm-title{
+
+		font-size: 1.5rem;
+    	padding: 0px 33px;
+		line-height: 27px;
+		margin-bottom: 5px;
+	}
+
+	.ccm{
+
+		font-size: 1.5rem;
+	}
+
+	.ccm-benefices p:nth-child(2){
+
+		font-size: 0.9rem;
+    	padding: 0px 15px;
+	}
+
+	.card-tables{
+
+		margin-top: 10px;
+	}
+
+	.cpay-table-container{
+
+		margin-bottom: 25px;
+		margin-left: 0px !important;
+	}
+
+	.cpay-table-container .choice-table-title{
+
+		font-size: 1rem;
+	}
+
+	.mastercard-table-container .choice-table-title{
+
+		font-size: 0.9rem;
+	}
+
+	.card-tables .avantages{
+
+		margin-top: 25px;
+	}
+
+	.mastercard-table-container .avantages{
+
+		margin-top: 20px;
+	}
+
+	.mastercard-table-container .avantages p:nth-child(3){
+
+		margin-bottom: 15px;
+	}
+
+	.ncrcard-previous-next .prev{
+
+		margin-left: 0px;
+	}
+
+	.capital-container .bold-title{
+
+		width: 175px;
+		line-height: 17px;
+	}
+
+	.capital-container .capital{
+
+		margin-top: 1px;
+		font-size: 1rem;
+	}
+
+	.tiny-p.renouvelable{
+
+		margin-bottom: -5px;
+		margin-top: 4px;
+	}
+
+	.mastercard-png{
+
+		margin-bottom: 6px;
+	}
+
+	.no-card{
+
+		margin-top: 15px;
+	}
+
+	.cpay-table-container{
+
+		padding-right: 0.46875rem;
+	}
+
+	.mastercard-table-container{
+
+		padding-left: 0.46875rem;
+	}
+
+	.cpay-table-container .bold-title{
+
+		display: block;
+	}
+	
+
+	/*=============== DETAILS ===============*/
+
+	.cpay-details-container .bold-title{
+
+		margin-bottom: 10px;
+	}
+
+	.details-title p{
+
+		font-size: 1.1rem;
+	}
+
+	.choice-table-title{
+
+		font-size: 1rem;
+	}
+
+	.details-container{
+
+		padding: 20px 20px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+
+	.details-container:before{
+
+		display: none;
+	}
+
+	.under-name{
+
+		font-size: 14px;
+	}
+
+	.details-wrapper:after {
+
+		left: 40%;
+	}
+
+	.detail-back:before{
+
+		left: 25%;
+	}
+
+	.wrap6 .last-line.cpay p{
+
+		padding-left: 20px;
+		padding-right: 50px;
+	}
+
+	.close-cross-container{
+
+		margin-top: -20px;
+		margin-right: -20px;
+	}
+
+	.cpay-details-container,
+	.mastercard-details-container{
+
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 20em) and (max-width: 23em){
+
+	.newcr-tc{
+
+		font-size: 0.73rem;
+		padding: 5px 8px;
+	}
+
+	.sommeTable .newcr-tc{
+		
+		padding: 5px 6px;
+  }
+
+	.row2 p,
+	.sommeTable .row2 p{
+
+      position: absolute;
+      right: -92px;
+   }
+
+  .ncr-emi-tbl .row2 p {
+	
+		position: absolute;
+		right: -85px;
+	}
+
+	.slide{
+
+		width: 110px;
+	}
+
+	.simu-mensualites .slick-track{
+		
+		padding: 2% 0 6% 0;
+  }
+
+	/*=============== CARD CHOICE ===============*/
+
+	.radio-container .radio-label .label1{
+
+		font-size: 0.875rem;
+	}
+
+	.ccm-title{
+
+		padding: 0px 15px;
+	}
+
+	.ccm{
+
+		line-height: 25px;
+		margin-top: 15px;
+	}
+
+	.ccm-benefices p:nth-child(2){
+
+		padding: 0px;
+	}
+
+	/*=============== DETAILS ===============*/
+	
+	.wrap6 .last-line.cpay p{
+
+		padding-right: 0px;
+	}
+}
+
+
+
+.column.simu-faq.no-sidepad {
+    display: none;
+}
