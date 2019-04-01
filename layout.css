@@ -5,7 +5,7 @@
 }
 
 .app-header {
-  background-color: #3D4145;
+  background-color: #96BF31;
   height: 10%;
   color: #ffffff;
   flex-grow: 0;
@@ -15,6 +15,7 @@
 }
 
 .app-header > h1 {
+  color: #ffffff;
   font-size: 18px;
   font-weight: 200;
   margin: 0;

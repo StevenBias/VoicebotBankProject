@@ -1,9 +1,16 @@
 .chatbox{
-   position: absolute;
+   position: fixed;
    height: 100%;
    right: 10px;
-   bottom: 0;
+   bottom: 25px;
+   z-index: 10;
 }
+
+button#rec{
+   margin-left: 30%;
+   height: 15px;
+}
+
 #input[type=text]{
    width: 220px;
 }
