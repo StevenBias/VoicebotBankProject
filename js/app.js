@@ -122,8 +122,8 @@ function setResponse(val) {
 
 
 function isOver(val){
-   var res = val.queryResult.intent.displayName;
-   if(res == "Stop"){
+   var res = val.queryResult.intent.endInteraction;
+   if(res){
       console.log("true");
       return true;
    }
