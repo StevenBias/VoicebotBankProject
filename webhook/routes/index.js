@@ -24,15 +24,24 @@ var router = express.Router();
   agent.handleRequest(intentMap); */
 
 router.post('/', function(req, res){
-  //if(req.body.result.parameters.Testing=='test'){
+  if(req.body.queryResult.intent.displayName=='Webhook test'){
     res.setHeader('Content-Type','application/json');
     res.send(JSON.stringify({
       //"speech":"Ca signifie blablabla",
       "fulfillmentText": "Ca signifie blablabla"}));
-      console.log(req.body);
+      console.log(req.body.queryResult.intent.displayName);
 
     }
-  //}
+    else if (req.body.queryResult.intent.displayName=='ModifierMensualite - yes - custom') {
+      res.setHeader('Content-Type','application/json');
+var amount = req.body.queryResult.parameters.number;
+var mens = Math.round(16317/amount);
+      res.send(JSON.stringify({
+        "fulfillmentText": "Dans ce cas votre durée de remboursement sera de "+ mens + " mois"}));
+        console.log(req.body.queryResult.intent.displayName);
+
+    }
+  }
 )
 
 module.exports = router;
