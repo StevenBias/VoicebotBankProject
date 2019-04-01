@@ -12,12 +12,25 @@ $(document).ready(function() {
    $("#rec").click(function(event) {
       switchRecognition();
    });
+   $('.app-header').click(function(event) {
+      switchChatbox();
+   });
 });
 
-$('body').on('click', '.app-header:not(.app-header)', function() {console.log("test")/* showChat(this);*/ });
 
 var recognition = new SpeechRecognition();
 var isRecording = false;
+var isBoxOpen = true;
+
+function switchChatbox(){
+   if(isBoxOpen){
+      reduceChatbox();
+   }
+   else{
+      loadChatbox();
+   }
+   isBoxOpen = !isBoxOpen;
+}
 
 function startRecognition() {
    recognition.lang = "fr-FR";
