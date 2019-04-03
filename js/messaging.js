@@ -26,10 +26,10 @@ function loadChatbox(){
 }
 
 function reduceChatbox(){
-   var e=document.getElementsByClassName("hidden-app-header");
+   var e=document.getElementsByClassName("hidden-app");
    e[0].style.display="block";
-   e[0].style.right="10px";
-   e[0].style.bottom="0";
+//   e[0].style.right="10px"none;
+//   e[0].style.bottom="0";
    var e=document.getElementsByClassName("app-header");
    e[0].style.display="none";
    var e=document.getElementsByClassName("app-content");
