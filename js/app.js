@@ -2,7 +2,7 @@
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 
 $(document).ready(function() {
-   addBotItem("Je suis Guy");
+   setTimeout(function(){sendWelcome();}, 1500);
    $("#input").keypress(function(event) {
       if (event.which == 13) {
          event.preventDefault();
@@ -13,8 +13,6 @@ $(document).ready(function() {
       switchRecognition();
    });
 });
-
-$('body').on('click', '.app-header:not(.app-header)', function() {console.log("test")/* showChat(this);*/ });
 
 var recognition = new SpeechRecognition();
 var isRecording = false;
@@ -64,6 +62,37 @@ function switchRecognition() {
 function setInput(text) {
    $("#input").val(text);
    send();
+}
+
+function sendWelcome() {
+   var token = getToken();
+   $.ajax({
+      type: "POST",
+      //$(gcloud auth application-default print-access-token)
+      url:
+      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      headers: {
+         "Authorization": "Bearer " + token
+      },
+      data: JSON.stringify({ 
+         "queryInput": {
+            "event": {
+               "name": "WELCOME",
+               "languageCode": "fr-FR"
+            }
+         }
+      }),
+
+      success: function(data) {
+         setResponse(data);
+      },
+      error: function() {
+         setResponse("Internal Server Error");
+      }
+   });
+   setResponse("Loading...");
 }
 
 function send() {
@@ -124,9 +153,7 @@ function setResponse(val) {
 function isOver(val){
    var res = val.queryResult.intent.endInteraction;
    if(res){
-      console.log("true");
       return true;
    }
-   console.log("false");
    return false;
 }
