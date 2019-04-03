@@ -25,6 +25,7 @@ function startRecognition() {
 
 recognition.onstart = function(event) {
    $("#rec").text("Stop");
+   $("#rec")[0].style.backgroundColor = "red";
 };
 
 recognition.onresult = function(event) {
@@ -48,6 +49,7 @@ function stopRecognition() {
       recognition.stop();
    }
    $("#rec").text("Speak");
+   $("#rec")[0].style.backgroundColor = "#96BF31";
    isRecording = false;
 }
 
