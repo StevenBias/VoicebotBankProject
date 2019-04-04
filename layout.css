@@ -19,7 +19,7 @@
   font-size: 18px;
   font-weight: 200;
   margin: 0;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .app-content {
@@ -27,8 +27,8 @@
   flex-shrink: 1;
   overflow-y: auto;
   background-color: #ffffff;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 10px;
+  padding-right: 15px;
   padding-top: 24px;
 }
 
@@ -77,14 +77,13 @@
 .item-container-bot .item {
   background-image: url(cetelem.png);
   background-position: left;
-  padding-left: 40px;
+  padding-left: 35px;
   color: #3D4145;
 }
 
 .item-container-user .item {
 /*  background-image: url(i/avatar_user.svg);*/
   background-position: right;
-  padding-right: 40px;
   color: #3498DB;
 }
 
@@ -184,10 +183,11 @@
 @media screen and (min-width: 480px) and (min-height: 256px) {
   .app-container {
      position: absolute;
-    width: 250px;
+    width: 320px;
     margin-left: auto;
     right: 10px;
     bottom: 0;
+    height: 65%
   }
 
   .app-content {
