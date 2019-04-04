@@ -6,11 +6,13 @@
    z-index: 10;
 }
 
-.chatbox .hidden-chatbox{
+.hidden-app{
+   background-color: black;
    position: fixed;
-   height: 80%;
+   height: 10%;
    right: 10px;
    bottom: 25px;
+   z-index: 10;
 }
 
 button#rec{

@@ -165,7 +165,6 @@ function setResponse(val) {
    }
 }
 
-
 function isOver(val){
    var res = val.queryResult.intent.endInteraction;
    if(res){
