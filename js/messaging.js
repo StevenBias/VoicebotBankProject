@@ -17,19 +17,16 @@ function addError(text) {
 }
 
 function loadChatbox(){
-   var e=document.getElementById("app-header");
-   e.style.display="block";
-   var e=document.getElementById("app-content");
-   e.style.display="block";
-   var e=document.getElementById("app-footer");
-   e.style.display="block";
+   var e=document.getElementsByClassName("hidden-app");
+   e[0].style.display="none";
+   var e=document.getElementsByClassName("chatbox");
+   e[0].style.display="block";
 }
 
 function reduceChatbox(){
-   var e=document.getElementById("app-header");
-   e.style.display="block";
-   var e=document.getElementById("app-content");
-   e.style.display="none";
-   var e=document.getElementById("app-footer");
-   e.style.display="none";
+   var e=document.getElementsByClassName("hidden-app");
+   e[0].style.display="block";
+   e[0].style.width="350px";
+   var e=document.getElementsByClassName("chatbox");
+   e[0].style.display="none";
 }
