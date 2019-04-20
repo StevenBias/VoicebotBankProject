@@ -7,11 +7,15 @@
 }
 
 .hidden-app{
-   background-color: black;
+   background-color: #96BF31;
+   border-top-left-radius: 4px;
+   border-top-right-radius: 4px;
    position: fixed;
-   height: 10%;
-   right: 10px;
+   height: 6%;
+   width: 320px;
+   right: 20px;
    bottom: 25px;
+   margin-bottom: 2%;
    z-index: 10;
 }
 
