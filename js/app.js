@@ -18,8 +18,10 @@ var recognition = new SpeechRecognition();
 var isRecording = false;
 
 recognition.onstart = function(event) {
-   console.log($("#micImg"));
-   $("#micImg")[0].style.backgroundColor = "red";
+   const micListening = document.querySelector(".listening");
+   const micReady = document.querySelector("#micImg");
+   micListening.style.display = "block";
+   micReady.style.display = "none";
 };
 
 recognition.onresult = function(event) {
@@ -46,9 +48,12 @@ function startRecognition() {
 
 function stopRecognition() {
    if (isRecording) {
+      const micListening = document.querySelector(".listening");
+      const micReady = document.querySelector("#micImg");
+      micListening.style.display = "none";
+      micReady.style.display = "block";
       recognition.stop();
    }
-   $("#micImg")[0].style.backgroundColor = "#96BF31";
    isRecording = false;
 }
 
