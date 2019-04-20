@@ -9,7 +9,7 @@ $(document).ready(function() {
          send();
       }
    });
-   $("#rec").click(function(event) {
+   $("#micImg").click(function(event) {
       switchRecognition();
    });
 });
@@ -17,15 +17,9 @@ $(document).ready(function() {
 var recognition = new SpeechRecognition();
 var isRecording = false;
 
-function startRecognition() {
-   recognition.lang = "fr-FR";
-   recognition.start();
-   isRecording = true;
-}
-
 recognition.onstart = function(event) {
-   $("#rec").text("Stop");
-   $("#rec")[0].style.backgroundColor = "red";
+   console.log($("#micImg"));
+   $("#micImg")[0].style.backgroundColor = "red";
 };
 
 recognition.onresult = function(event) {
@@ -44,12 +38,17 @@ recognition.onend = function() {
    stopRecognition();
 }
 
+function startRecognition() {
+   recognition.lang = "fr-FR";
+   recognition.start();
+   isRecording = true;
+}
+
 function stopRecognition() {
    if (isRecording) {
       recognition.stop();
    }
-   $("#rec").text("Speak");
-   $("#rec")[0].style.backgroundColor = "#96BF31";
+   $("#micImg")[0].style.backgroundColor = "#96BF31";
    isRecording = false;
 }
 
