@@ -2449,22 +2449,26 @@ window._uxa.push(["trackPageview",window.location.pathname+window.location.hash.
       <h1 id"botName">Cetelem</h1>
    </div>
 </div>
+<div class="hidden-chatbox" style="display:none" >
+   <div class="app-header">
+      <h1 id"botName">Cetelem</h1>
+   </div>
+</div>
       <div class="chatbox">
          <div class="app-container">
             <div class="app-header">
+
                <h1 id"botName">Cetelem</h1>
             </div>
             <div class="app-content">
             </div>
-            <div class="app-footer not-signed-in">
-               <div class="app-footer-inner">
-                  <div class="mic">
-                     <div class="ready"><a href="#" id="start"><img src="cetelem.png" alt="Tap me to speak" /></a></div>
+            <div class="app-footer hidden-app-footer not-signed-in">
+               <div class="app-footer-inner hidden-app-footer-inner">
+                  <div class="rec">
+                     <a href="#"><img id="micImg" src="img/mic.png" alt="Tap me to speak" /></a>
+                     <div class="listening" style="display:none"><span class="listening-1">.</span><span class="listening-2">.</span><span class="listening-3">.</span></div>
                   </div>
-                  <div>
-                     <button id="rec">Speak</button>
                      <input id="input" type="text" placeholder="Saisissez du texte">
-                  </div>
                </div>
             </div>
          </div>
