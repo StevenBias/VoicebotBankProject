@@ -26,7 +26,6 @@ function loadChatbox(){
 function reduceChatbox(){
    var e=document.getElementsByClassName("hidden-app");
    e[0].style.display="block";
-   e[0].style.width="350px";
    var e=document.getElementsByClassName("chatbox");
    e[0].style.display="none";
 }
