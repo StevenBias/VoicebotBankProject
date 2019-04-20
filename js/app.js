@@ -9,7 +9,7 @@ $(document).ready(function() {
          send();
       }
    });
-   $("#rec").click(function(event) {
+   $("#micImg").click(function(event) {
       switchRecognition();
    });
    $('.app-header').click(function(event) {
@@ -31,15 +31,11 @@ function switchChatbox(){
    isBoxOpen = !isBoxOpen;
 }
 
-function startRecognition() {
-   recognition.lang = "fr-FR";
-   recognition.start();
-   isRecording = true;
-}
-
 recognition.onstart = function(event) {
-   $("#rec").text("Stop");
-   $("#rec")[0].style.backgroundColor = "red";
+   const micListening = document.querySelector(".listening");
+   const micReady = document.querySelector("#micImg");
+   micListening.style.display = "block";
+   micReady.style.display = "none";
 };
 
 recognition.onresult = function(event) {
@@ -58,12 +54,20 @@ recognition.onend = function() {
    stopRecognition();
 }
 
+function startRecognition() {
+   recognition.lang = "fr-FR";
+   recognition.start();
+   isRecording = true;
+}
+
 function stopRecognition() {
    if (isRecording) {
+      const micListening = document.querySelector(".listening");
+      const micReady = document.querySelector("#micImg");
+      micListening.style.display = "none";
+      micReady.style.display = "block";
       recognition.stop();
    }
-   $("#rec").text("Speak");
-   $("#rec")[0].style.backgroundColor = "#96BF31";
    isRecording = false;
 }
 
