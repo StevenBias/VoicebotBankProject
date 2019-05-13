@@ -120,33 +120,24 @@ function send() {
    $("#input").val('');
    addUserItem(text);
    var token = getToken();
-   $.ajax({
-      type: "POST",
-      //$(gcloud auth application-default print-access-token)
-      url:
-      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
-      contentType: "application/json; charset=utf-8",
-      dataType: "json",
-      headers: {
-         "Authorization": "Bearer " + token
-      },
-      data: JSON.stringify({ 
+   gapi.client.request({
+      path: 'https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent',
+      method: "POST",
+      body: {
          "queryInput": {
             "text": {
-               "text": text,
+               "text": "bonjour",
                "languageCode": "fr-FR"
             }
          }
-      }),
-
-      success: function(data) {
-         setResponse(data);
-      },
-      error: function() {
-         setResponse("Internal Server Error");
       }
-   });
-   setResponse("Loading...");
+      }).then(handleResponse, handleError);
+
+      function handleResponse(serverResponse) {
+      }
+      function handleError(serverError) {
+         console.log("Error from DialogFlow server: ", serverError);
+      }
 }
 
 function setResponse(val) {
