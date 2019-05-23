@@ -21,7 +21,7 @@ const util = require('util');
 module.exports = async function (query) {
   // [START dialogflow_detect_intent_with_texttospeech_response]
   // Imports the Dialogflow client library
-  const dialogflow = require('dialogflow');
+  const dialogflow = require('dialogflow').v2beta1;
 
   // Instantiate a DialogFlow client.
   const sessionClient = new dialogflow.SessionsClient();
@@ -45,10 +45,10 @@ module.exports = async function (query) {
         languageCode: languageCode,
       },
     },
-    outputAudioConfig: {
-      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
+//    outputAudioConfig: {
+//      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
 //		 sampleRateHertz: 1,
-    },
+//    },
   };
 
   // Send request and log result
