@@ -117,27 +117,31 @@ function sendWelcome() {
 
 function send() {
    var text = $("#input").val();
-   $("#input").val('');
+	var socket = io.connect('http:localhost:8080');
+	socket.emit('message', text);
    addUserItem(text);
-   var token = getToken();
-   gapi.client.request({
-      path: 'https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent',
-      method: "POST",
-      body: {
-         "queryInput": {
-            "text": {
-               "text": "bonjour",
-               "languageCode": "fr-FR"
-            }
-         }
-      }
-      }).then(handleResponse, handleError);
-
-      function handleResponse(serverResponse) {
-      }
-      function handleError(serverError) {
-         console.log("Error from DialogFlow server: ", serverError);
-      }
+//   var text = $("#input").val();
+//   $("#input").val('');
+//   addUserItem(text);
+//   var token = getToken();
+//   gapi.client.request({
+//      path: 'https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent',
+//      method: "POST",
+//      body: {
+//         "queryInput": {
+//            "text": {
+//               "text": "bonjour",
+//               "languageCode": "fr-FR"
+//            }
+//         }
+//      }
+//      }).then(handleResponse, handleError);
+//
+//      function handleResponse(serverResponse) {
+//      }
+//      function handleError(serverError) {
+//         console.log("Error from DialogFlow server: ", serverError);
+//      }
 }
 
 function setResponse(val) {

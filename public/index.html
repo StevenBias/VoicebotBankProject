@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Website Bank</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://apis.google.com/js/platform.js?onload=loadAuthClient" async defer ></script>
+		<link rel="stylesheet" type="text/css" href="css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="/socket.io/socket.io.js" ></script>
+		<script type="text/javascript" src="js/auth.js" ></script>
+		<script type="text/javascript" src="js/messaging.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<link rel="manifest" href="manifest.webapp">
+	</head>
+	<body>
+		<div class="hidden-app" style="display:none" >
+			<div class="app-header">
+				<h1 id"botName">Cetelem</h1>
+			</div>
+		</div>
+		<div class="hidden-chatbox" style="display:none" >
+			<div class="app-header">
+				<h1 id"botName">Cetelem</h1>
+			</div>
+		</div>
+		<div class="chatbox">
+			<div class="app-container">
+				<div class="app-header">
+
+					<h1 id"botName">Cetelem</h1>
+				</div>
+				<div class="app-content">
+				</div>
+				<div class="app-footer hidden-app-footer not-signed-in">
+					<div class="app-footer-inner hidden-app-footer-inner">
+						<div class="rec">
+							<a href="#"><img id="micImg" src="img/mic.png" alt="Tap me to speak" /></a>
+							<div class="listening" style="display:none"><span class="listening-1">.</span><span class="listening-2">.</span><span class="listening-3">.</span></div>
+						</div>
+						<input id="input" type="text" placeholder="Saisissez du texte">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
