@@ -16,8 +16,8 @@
 'use strict';
 
 //const projectId = process.env.GCLOUD_PROJECT;
-//const util = require('util');
-var res;
+const util = require('util');
+
 module.exports = async function (query) {
   // [START dialogflow_detect_intent_with_texttospeech_response]
   // Imports the Dialogflow client library
@@ -33,6 +33,8 @@ module.exports = async function (query) {
 
   // Define session path
   const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+//	const fs = require('fs');
+//	const outputFile = './public/js/sound.wav';
 
   // The audio query request
   const request = {
@@ -43,13 +45,13 @@ module.exports = async function (query) {
         languageCode: languageCode,
       },
     },
-//    outputAudioConfig: {
-//      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
-//    },
+    outputAudioConfig: {
+      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
+//		 sampleRateHertz: 1,
+    },
   };
 
   // Send request and log result
-  return await sessionClient.detectIntent(request);
 //  const responses = await sessionClient.detectIntent(request);
 //	res = responses[0];
 //	return JSON.stringify(res);
@@ -64,8 +66,13 @@ module.exports = async function (query) {
 //    console.log(`  No intent matched.`);
 //  }
 //
-//  const audioFile = responses[0].outputAudio;
-////  await util.promisify(fs.writeFile)(outputFile, audioFile, 'binary');
-////  console.log(`Audio content written to file: ${outputFile}`);
+	var responses = await sessionClient.detectIntent(request);
+
+  const audioFile = responses[0].outputAudio;
+	console.log(audioFile.toString('base64'));
+	responses[0].outputAudio = audioFile.toString('base64');
+//  await util.promisify(fs.writeFile)(outputFile, audioFile, 'binary');
+//  console.log(`Audio content written to file: ${outputFile}`);
+  return responses;
 //  // [END dialogflow_detect_intent_with_texttospeech_response]
 }

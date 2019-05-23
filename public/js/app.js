@@ -104,14 +104,14 @@ function setResponse(val) {
       addBotItem(val);
    }
    else{
-		console.log(val);
       var response = val.queryResult.fulfillmentText;
       $("#response").text(response);
       $("#input").text("");
       addBotItem(response);
       var res = val.queryResult.fulfillmentText;
-		console.log(val.outputAudio);
-      var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
+		var sound = val.outputAudio;
+		console.log(sound);
+      var snd = new Audio("data:audio/wav;base64," + sound);
       //re-acrivate mic after end of bot speech
       snd.addEventListener("ended", function(){
          if(!isOver(val))
