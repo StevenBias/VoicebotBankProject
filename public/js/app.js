@@ -1,5 +1,6 @@
 //For compatibility
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var socket = io.connect('http://localhost:8080');
 
 $(document).ready(function() {
    setTimeout(function(){sendWelcome();}, 1500);
@@ -85,68 +86,22 @@ function setInput(text) {
 }
 
 function sendWelcome() {
-//   var token = getToken();
-//   $.ajax({
-//      type: "POST",
-//      //$(gcloud auth application-default print-access-token)
-//      url:
-//      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
-//      contentType: "application/json; charset=utf-8",
-//      dataType: "json",
-//      headers: {
-//         "Authorization": "Bearer " + token
-//      },
-//      data: JSON.stringify({ 
-//         "queryInput": {
-//            "event": {
-//               "name": "WELCOME",
-//               "languageCode": "fr-FR"
-//            }
-//         }
-//      }),
-//
-//      success: function(data) {
-//         setResponse(data);
-//      },
-//      error: function() {
-//         setResponse("Internal Server Error");
-//      }
-//   });
-//   setResponse("Loading...");
+   var text = "Bonjour, je suis Guy";
+	socket.emit('sendIntent', text);
+   $("#input").val('');
 }
 
 function send() {
    var text = $("#input").val();
-	var socket = io.connect('http://localhost:8080');
-	socket.emit('message', text);
+	socket.emit('sendIntent', text);
    addUserItem(text);
-//   var text = $("#input").val();
-//   $("#input").val('');
-//   addUserItem(text);
-//   var token = getToken();
-//   gapi.client.request({
-//      path: 'https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent',
-//      method: "POST",
-//      body: {
-//         "queryInput": {
-//            "text": {
-//               "text": "bonjour",
-//               "languageCode": "fr-FR"
-//            }
-//         }
-//      }
-//      }).then(handleResponse, handleError);
-//
-//      function handleResponse(serverResponse) {
-//      }
-//      function handleError(serverError) {
-//         console.log("Error from DialogFlow server: ", serverError);
-//      }
+   $("#input").val('');
 }
 
 function setResponse(val) {
    if(typeof(val) == "string"){
       $("#response").text(val);
+      addBotItem(val);
    }
    else{
       var response = val.queryResult.fulfillmentText;
@@ -163,6 +118,11 @@ function setResponse(val) {
       snd.play();
    }
 }
+
+socket.on('resDialogflow', function(res){
+	console.log(res);
+	setResponse(res);
+});
 
 function isOver(val){
    var res = val.queryResult.intent.endInteraction;
