@@ -17,8 +17,8 @@
 
 //const projectId = process.env.GCLOUD_PROJECT;
 //const util = require('util');
-
-async function detectIntent() {
+var res;
+module.exports = async function (query) {
   // [START dialogflow_detect_intent_with_texttospeech_response]
   // Imports the Dialogflow client library
   const dialogflow = require('dialogflow').v2beta1;
@@ -28,7 +28,6 @@ async function detectIntent() {
 
   const projectId = 'guide-cetelem';
   const sessionId = '1234';
-  const query = 'bonjour';
   const languageCode = 'fr-FR';
 //  const outputFile = `path for audio output file, e.g. ./resources/myOutput.wav`;
 
@@ -51,23 +50,25 @@ async function detectIntent() {
   };
 
   // Send request and log result
-  const responses = await sessionClient.detectIntent(request);
-  console.log('Detected intent');
-
-  const result = responses[0].queryResult;
-  console.log(`  Query: ${result.queryText}`);
-  console.log(`  Response: ${result.fulfillmentText}`);
-  if (result.intent) {
-    console.log(`  Intent: ${result.intent.displayName}`);
-  } else {
-    console.log(`  No intent matched.`);
-  }
-
-  const audioFile = responses[0].outputAudio;
-//  await util.promisify(fs.writeFile)(outputFile, audioFile, 'binary');
-//  console.log(`Audio content written to file: ${outputFile}`);
-  // [END dialogflow_detect_intent_with_texttospeech_response]
+  return await sessionClient.detectIntent(request);
+//  const responses = await sessionClient.detectIntent(request);
+//	res = responses[0];
+//	console.log("TTTTTT: "+JSON.stringify(res));
+//	return JSON.stringify(res);
+//  console.log('Detected intent');
+//
+//  const result = responses[0].queryResult;
+//  console.log('BOT: '+JSON.stringify(responses[0].queryResult));
+//  console.log(`  Query: ${result.queryText}`);
+//  console.log(`  Response: ${result.fulfillmentText}`);
+//  if (result.intent) {
+//    console.log(`  Intent: ${result.intent.displayName}`);
+//  } else {
+//    console.log(`  No intent matched.`);
+//  }
+//
+//  const audioFile = responses[0].outputAudio;
+////  await util.promisify(fs.writeFile)(outputFile, audioFile, 'binary');
+////  console.log(`Audio content written to file: ${outputFile}`);
+//  // [END dialogflow_detect_intent_with_texttospeech_response]
 }
-
-
-detectIntent();

@@ -120,7 +120,7 @@ function setResponse(val) {
 }
 
 socket.on('resDialogflow', function(res){
-	console.log(res);
+	console.log(JSON.stringify(res));
 	setResponse(res);
 });
 

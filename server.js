@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var agent = require('./public/js/agent.js');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -51,9 +52,13 @@ io.on('connection', function (socket) {
   socket.on('message', function (data) {
     console.log(data);
   });
-	socket.on('sendIntent', function(intent){
-		socket.emit('resDialogflow', 'Dialogflow response '+intent);
-		console.log('test bot '+intent);
+	socket.on('sendIntent', function(query){
+		var resp;
+		agent(query).then(function(data){
+			console.log(data[0]);
+			console.log('test bot '+ JSON.stringify(data[0]));
+			socket.emit('resDialogflow', data[0]);
+			});
 	});
 });
 
