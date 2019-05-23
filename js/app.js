@@ -154,6 +154,7 @@ function setResponse(val) {
       $("#response").text(val);
    }
    else{
+		console.log(val);
       var response = val.queryResult.fulfillmentText;
       $("#response").text(response);
       $("#input").text("");
