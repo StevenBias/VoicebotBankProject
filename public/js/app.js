@@ -104,7 +104,7 @@ function setResponse(val) {
       addBotItem(val);
    }
    else{
-		console.log(JSON.stringify(val));
+		console.log(val);
       var response = val.queryResult.fulfillmentText;
       $("#response").text(response);
       $("#input").text("");

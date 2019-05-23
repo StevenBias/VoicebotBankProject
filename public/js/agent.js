@@ -21,7 +21,7 @@ var res;
 module.exports = async function (query) {
   // [START dialogflow_detect_intent_with_texttospeech_response]
   // Imports the Dialogflow client library
-  const dialogflow = require('dialogflow').v2beta1;
+  const dialogflow = require('dialogflow');
 
   // Instantiate a DialogFlow client.
   const sessionClient = new dialogflow.SessionsClient();
