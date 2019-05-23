@@ -33,7 +33,6 @@ module.exports = async function (query) {
 
   // Define session path
   const sessionPath = sessionClient.sessionPath(projectId, sessionId);
-  const fs = require(`fs`);
 
   // The audio query request
   const request = {
@@ -44,9 +43,9 @@ module.exports = async function (query) {
         languageCode: languageCode,
       },
     },
-    outputAudioConfig: {
-      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
-    },
+//    outputAudioConfig: {
+//      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
+//    },
   };
 
   // Send request and log result
