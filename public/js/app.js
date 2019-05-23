@@ -85,39 +85,39 @@ function setInput(text) {
 }
 
 function sendWelcome() {
-   var token = getToken();
-   $.ajax({
-      type: "POST",
-      //$(gcloud auth application-default print-access-token)
-      url:
-      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
-      contentType: "application/json; charset=utf-8",
-      dataType: "json",
-      headers: {
-         "Authorization": "Bearer " + token
-      },
-      data: JSON.stringify({ 
-         "queryInput": {
-            "event": {
-               "name": "WELCOME",
-               "languageCode": "fr-FR"
-            }
-         }
-      }),
-
-      success: function(data) {
-         setResponse(data);
-      },
-      error: function() {
-         setResponse("Internal Server Error");
-      }
-   });
-   setResponse("Loading...");
+//   var token = getToken();
+//   $.ajax({
+//      type: "POST",
+//      //$(gcloud auth application-default print-access-token)
+//      url:
+//      "https://dialogflow.googleapis.com/v2beta1/projects/guide-cetelem/agent/sessions/1234:detectIntent",
+//      contentType: "application/json; charset=utf-8",
+//      dataType: "json",
+//      headers: {
+//         "Authorization": "Bearer " + token
+//      },
+//      data: JSON.stringify({ 
+//         "queryInput": {
+//            "event": {
+//               "name": "WELCOME",
+//               "languageCode": "fr-FR"
+//            }
+//         }
+//      }),
+//
+//      success: function(data) {
+//         setResponse(data);
+//      },
+//      error: function() {
+//         setResponse("Internal Server Error");
+//      }
+//   });
+//   setResponse("Loading...");
 }
 
 function send() {
    var text = $("#input").val();
-	var socket = io.connect('http:localhost:8080');
+	var socket = io.connect('http://localhost:8080');
 	socket.emit('message', text);
    addUserItem(text);
 //   var text = $("#input").val();
