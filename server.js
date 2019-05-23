@@ -55,8 +55,6 @@ io.on('connection', function (socket) {
 	socket.on('sendIntent', function(query){
 		var resp;
 		agent(query).then(function(data){
-			console.log(data[0]);
-			console.log('test bot '+ JSON.stringify(data[0]));
 			socket.emit('resDialogflow', data[0]);
 			});
 	});

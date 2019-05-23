@@ -109,6 +109,7 @@ function setResponse(val) {
       $("#input").text("");
       addBotItem(response);
       var res = val.queryResult.fulfillmentText;
+		console.log(val.outputAudio);
       var snd = new Audio("data:audio/wav;base64," + val.outputAudio);
       //re-acrivate mic after end of bot speech
       snd.addEventListener("ended", function(){
@@ -120,7 +121,6 @@ function setResponse(val) {
 }
 
 socket.on('resDialogflow', function(res){
-	console.log(JSON.stringify(res));
 	setResponse(res);
 });
 

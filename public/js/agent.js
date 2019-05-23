@@ -53,12 +53,10 @@ module.exports = async function (query) {
   return await sessionClient.detectIntent(request);
 //  const responses = await sessionClient.detectIntent(request);
 //	res = responses[0];
-//	console.log("TTTTTT: "+JSON.stringify(res));
 //	return JSON.stringify(res);
 //  console.log('Detected intent');
 //
 //  const result = responses[0].queryResult;
-//  console.log('BOT: '+JSON.stringify(responses[0].queryResult));
 //  console.log(`  Query: ${result.queryText}`);
 //  console.log(`  Response: ${result.fulfillmentText}`);
 //  if (result.intent) {
