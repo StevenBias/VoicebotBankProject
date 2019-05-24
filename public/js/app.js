@@ -86,9 +86,8 @@ function setInput(text) {
 }
 
 function sendWelcome() {
-   var text = "Bonjour, je suis Guy";
-	socket.emit('sendIntent', text);
-   $("#input").val('');
+	socket.emit('sendEvent', 'WELCOME');
+//   $("#input").val('');
 }
 
 function send() {
@@ -108,9 +107,7 @@ function setResponse(val) {
       $("#response").text(response);
       $("#input").text("");
       addBotItem(response);
-      var res = val.queryResult.fulfillmentText;
 		var sound = val.outputAudio;
-		console.log(sound);
       var snd = new Audio("data:audio/wav;base64," + sound);
       //re-acrivate mic after end of bot speech
       snd.addEventListener("ended", function(){

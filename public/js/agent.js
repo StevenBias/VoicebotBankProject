@@ -18,61 +18,51 @@
 //const projectId = process.env.GCLOUD_PROJECT;
 const util = require('util');
 
-module.exports = async function (query) {
-  // [START dialogflow_detect_intent_with_texttospeech_response]
-  // Imports the Dialogflow client library
-  const dialogflow = require('dialogflow').v2beta1;
+module.exports = async function (query, agentEvent) {
+	// [START dialogflow_detect_intent_with_texttospeech_response]
+	// Imports the Dialogflow client library
+	const dialogflow = require('dialogflow').v2beta1;
 
-  // Instantiate a DialogFlow client.
-  const sessionClient = new dialogflow.SessionsClient();
+	// Instantiate a DialogFlow client.
+	const sessionClient = new dialogflow.SessionsClient();
 
-  const projectId = 'guide-cetelem';
-  const sessionId = '1234';
-  const languageCode = 'fr-FR';
-//  const outputFile = `path for audio output file, e.g. ./resources/myOutput.wav`;
+	const projectId = 'guide-cetelem';
+	const sessionId = '1234';
+	const languageCode = 'fr-FR';
 
-  // Define session path
-  const sessionPath = sessionClient.sessionPath(projectId, sessionId);
-//	const fs = require('fs');
-//	const outputFile = './public/js/sound.wav';
+	// Define session path
+	const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
-  // The audio query request
-  const request = {
-    session: sessionPath,
-    queryInput: {
-      text: {
-        text: query,
-        languageCode: languageCode,
-      },
-    },
-//    outputAudioConfig: {
-//      audioEncoding: `OUTPUT_AUDIO_ENCODING_LINEAR_16`,
-//		 sampleRateHertz: 1,
-//    },
-  };
+	var req;
+	if(agentEvent == undefined){
+		console.log("undefined");
+		// The audio query request
+		req= {
+			session: sessionPath,
+			queryInput: {
+				text: {
+					text: query,
+					languageCode: languageCode,
+				},
+			},
+		};
+	}else{
+		// detect event
+		req= {
+			session: sessionPath,
+			queryInput: {
+				"event": {
+					name: query,
+					languageCode: languageCode,
+				},
+			},
+		};
+	}
+		const request = req;
 
-  // Send request and log result
-//  const responses = await sessionClient.detectIntent(request);
-//	res = responses[0];
-//	return JSON.stringify(res);
-//  console.log('Detected intent');
-//
-//  const result = responses[0].queryResult;
-//  console.log(`  Query: ${result.queryText}`);
-//  console.log(`  Response: ${result.fulfillmentText}`);
-//  if (result.intent) {
-//    console.log(`  Intent: ${result.intent.displayName}`);
-//  } else {
-//    console.log(`  No intent matched.`);
-//  }
-//
 	var responses = await sessionClient.detectIntent(request);
-
-  const audioFile = responses[0].outputAudio;
-	console.log(audioFile.toString('base64'));
-	responses[0].outputAudio = audioFile.toString('base64');
-//  await util.promisify(fs.writeFile)(outputFile, audioFile, 'binary');
-//  console.log(`Audio content written to file: ${outputFile}`);
-  return responses;
-//  // [END dialogflow_detect_intent_with_texttospeech_response]
+	//Convert outputAudio format!
+	responses[0].outputAudio = responses[0].outputAudio.toString('base64');
+	return responses;
+	//  // [END dialogflow_detect_intent_with_texttospeech_response]
 }

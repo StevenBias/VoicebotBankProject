@@ -16,5 +16,8 @@
     "pb-util": "^0.1.0",
     "socket.io": "^2.2.0",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   }
 }
