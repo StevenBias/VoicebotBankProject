@@ -1,6 +1,6 @@
 //For compatibility
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect(/*'http://localhost:8080'*/);
 
 $(document).ready(function() {
    sendWelcome();
