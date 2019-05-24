@@ -65,5 +65,5 @@ io.on('connection', function (socket) {
 	});
 });
 
-server.listen(port);
+server.listen(process.env.PORT || port);
 module.exports = app;
