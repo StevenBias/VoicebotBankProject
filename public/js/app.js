@@ -3,7 +3,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var socket = io.connect('http://localhost:8080');
 
 $(document).ready(function() {
-   setTimeout(function(){sendWelcome();}, 1500);
+   sendWelcome();
    $("#input").keypress(function(event) {
       if (event.which == 13) {
          event.preventDefault();
@@ -87,7 +87,6 @@ function setInput(text) {
 
 function sendWelcome() {
 	socket.emit('sendEvent', 'WELCOME');
-//   $("#input").val('');
 }
 
 function send() {
