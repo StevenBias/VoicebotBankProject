@@ -52,16 +52,17 @@ io.on('connection', function (socket) {
 	socket.on('message', function (data) {
 	});
 	socket.on('sendIntent', function(query){
-		var resp;
 		agent(query).then(function(data){
 			socket.emit('resDialogflow', data[0]);
 		});
 	});
 	socket.on('sendEvent', function(query){
-		var resp;
 		agent(query, 'agentEvent').then(function(data){
 			socket.emit('resDialogflow', data[0]);
 		});
+	});
+	agent('WELCOME', 'agentEvent').then(function(data){
+		socket.emit('resDialogflow', data[0]);
 	});
 });
 
