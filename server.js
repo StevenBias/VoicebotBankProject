@@ -61,11 +61,6 @@ io.on('connection', function (socket) {
 			socket.emit('resDialogflow', data[0]);
 		});
 	});
-	setTimeout(function(){
-		agent('WELCOME', 'agentEvent').then(function(data){
-			socket.emit('resDialogflow', data[0]);
-		});
-	}, 3000);
 });
 
 server.listen(process.env.PORT || port);
