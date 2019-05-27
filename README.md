@@ -11,7 +11,7 @@ Nous avons également été accompagné par [Metrics Factory](http://www.themetr
 
 Le résultat du projet est disponible [ici](https://stormy-hollows-17040.herokuapp.com/).
 
-La démonstration consiste à utiliser un assistant vocal qui guide l'utilisateur lors d'une simulation à partir du site [Cetelem](https://www.cetelem.fr/fr/accueil).
+La démonstration consiste à utiliser un assistant vocal qui guide l'utilisateur lors d'une simulation de crédit à partir du site [Cetelem](https://www.cetelem.fr/fr/accueil).
 La page de démonstration correspond au résultat d'une simulation de crédit d'une valeur de 15 000€  pour des vacances.
 
 Le contexte complet de la démonstration est détaillé [ici](https://docs.google.com/document/d/1t0GNiCycPUOkMlgAducT4uIE_KiCTIrA_gjZTrOMc7s/edit?usp=sharing).
