@@ -1,6 +1,6 @@
 # VoicebotBankProject
 
-Ce projet est la réalisation d'un prototype d'interface voix pour la [BNP Parisbas Personal Fnance](https://personal-finance.bnpparibas/fr/) réalisé dans le cadre du master [Innovation et Transformation Numérique](https://www.sciencespo.fr/ecole-management-innovation/fr/formations/innovation-transformation-numerique.html) à SciencesPo Paris et Télécom ParisTech.
+Ce projet est la réalisation d'un prototype d'interface voix pour la [BNP Parisbas Personal Finance](https://personal-finance.bnpparibas/fr/) réalisé dans le cadre du master [Innovation et Transformation Numérique](https://www.sciencespo.fr/ecole-management-innovation/fr/formations/innovation-transformation-numerique.html) à SciencesPo Paris et Télécom ParisTech.
 Nous sommes une équipe de 4 étudiants et avons fait ce projet en plus de nos cours.
 
 Nous avons également été accompagné par [Metrics Factory](http://www.themetricsfactory.com/) et le projet s'est déroulé de septembre 2018 à mai 2019.
