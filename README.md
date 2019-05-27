@@ -53,10 +53,7 @@ Lors du second semestre nous avons :
 
 ## Auteurs
 
-[Hanady Abboud](https://www.linkedin.com/in/hanady-abboud)
-[Imane Assad](https://www.linkedin.com/in/imane-assaad-30988a107/)
-[Marion Duhirel](https://www.linkedin.com/in/marion-duhirel-272140a8)
-[Steven Bias](https://www.linkedin.com/in/steven-bias/)
+[Hanady Abboud](https://www.linkedin.com/in/hanady-abboud), [Imane Assad](https://www.linkedin.com/in/imane-assaad-30988a107/), [Marion Duhirel](https://www.linkedin.com/in/marion-duhirel-272140a8) et [Steven Bias](https://www.linkedin.com/in/steven-bias/).
 
 ## Remerciements
 
