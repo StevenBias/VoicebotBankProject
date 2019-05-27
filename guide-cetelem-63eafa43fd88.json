@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "guide-cetelem",
+  "private_key_id": "63eafa43fd88ed9c4d33c9bc3c27fe72f1e85b11",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD11bByM6pAkoAY\nDASrR0Hz5G/0TM6ezkONblunY9SzYCPu4X1hDWfjBbKa2Ax1TjbGlrCbcJxY7E/g\nOCI0xzVlVFra2IjUhQHZF1eBIJZechBW3Vw1NYWdstt+S1qXlY+01af3+96fxE/z\n3224auIJNSwJVrwXQyd6gzP/Ms2swNgZmMR0qu9GXTLkPIJ9FIDKmbm71P/82Hmb\nW37OuP4bG0g1i/yce66oKyWWfwILQZlmjLiVcMdnFfQ1lpnb64XDCmLH7j2zwCxB\nmHQAlEmwBm0okGDVm5a/d7kvLOxQKVo4ocBv1dPgPTKFzmKw3uOx4nAtMDO1rDK3\ndX2/zAyPAgMBAAECggEABPBdcniV67owbKCWhMJnvCNTbyW5OPjijo2Ftd/hlBZT\nDSeRQfPnqb325U7V4T1zCEZawfoJ32zP+1c6s14VNTXz+qrtr3yvRCdIkMWQ1SZB\ngcfsuaebnvF1oMdEHgDZOZmD8w19CYSuKTN3RtnkNKnReqviwizijCmP+ok7bJm2\nfnFSpV/mRnWX3IQXueQmOOMrdo/TsctcsvQ9EsIgERhlIaNS446HJ5vfZMCGE9hJ\n9DaobzQmo0HgH3oN4ZMNlV8IWk5r8Z5IWLSIOAn3fcCOU33QViKFv9v2vUQlDK5c\nL9yrn69SHOY45Qg5Lh4yCUcYNcWOVcxGa24Q3V7AAQKBgQD9LFIhfqtLkqTRqFy6\njOZsLqoKUQuiF4iTAX1qEiy4k6Iy7e/hs1wGAcqPbdUgwAV9MOvKJIawUnI6IYCi\nMuxLNV8gJQHvlo8U0gUXM0nFAT2lr8pLW8cyILxDiJnXhvyBuPprx8NjQFOPl6KH\nJXungJtG0qPff+EBYZpg84LcjwKBgQD4lGRd/zml1fcu64S9klvxq1mETkdOzcZo\nShkuudokf3nyRp0rVLE2r+Yo5ap/GYTdw7P9PqM3/VZ2zUdZE8CG0TYB9G7p6Oko\nvhWUr9TI6us+MdgicqnFPhdfoqTHHMPxmg8geukAM3wlu4gbHyWBgxuUQGkNLJoG\nOqu+ahvQAQKBgG2/2tK+UI9wQJbKf3g3QGRBTmEuhPZ9cS0ZBj8HJe/VwAiH8OdM\nk2XfPOo0WKHb3AVLQcvdTa3975qXj2XA4YIw3s3WfSJZiCkkaiSGjUIjqY+7xtwo\nKw/l9Pbprpcp4yhxAc3bSS4rYo3q0//2FcalD6sCARwQGYA5yWyh42atAoGAM71n\nWq1KCXuMtKZu/apeGuJIgqJsczmfh4uMzE4A2sHx1vzdr+wz6qcYKAENyOC96A7Z\nAugrvvarLZUyuZbD5wvayvNetq81ALb39PfYOW20Q0DKtPja32Q6JzzKQWt6WWpw\npZkPsGwG9i+fd82218s7TVNOymAzOwKxRrP9UAECgYEAvcmWFM8npMoKDjEdH/IX\n98rb8VUwlvCy2EoiEHu7Tg7R6J5OAcG3MYX3M9mKL/yET9YAi49l01AHwShamsJs\nufgUVGgGVqv5IRXnQ04kjP72el5xpDZI/jJE1LGpIjIj4JGfZwe8At0DABA61Oxz\nHVF1r6rggw9E98gTLXUzxAE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "website@guide-cetelem.iam.gserviceaccount.com",
+  "client_id": "110158854207866034995",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/website%40guide-cetelem.iam.gserviceaccount.com"
+}
