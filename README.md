@@ -26,6 +26,8 @@ Le contexte complet de la démonstration est détaillé [ici](https://docs.googl
 Puis ouvrir un onglet sur Google Chrome à l'adresse [localhost:8080](http://localhost:8080).
 >Sur Linux il suffit de lancer le fichier [run.sh](run.sh).
 
+L'agent conversationnel peut être importer sur [Dialogflow](https://dialogflow.com/) à partir de [Guide-Cetelem.zip](Guide-Cetelem.zip)
+
 ## Déroulement du projet
 
 ### Définition de l'usage et cadrage technique
