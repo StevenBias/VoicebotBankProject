@@ -2,8 +2,8 @@
 
 Ce projet est la réalisation d'un prototype d'interface voix pour la [BNP Parisbas Personal Fnance](https://personal-finance.bnpparibas/fr/) réalisé dans le cadre du master [Innovation et Transformation Numérique](https://www.sciencespo.fr/ecole-management-innovation/fr/formations/innovation-transformation-numerique.html) à SciencesPo Paris et Télécom ParisTech.
 Nous sommes une équipe de 4 étudiants et avons fait ce projet en plus de nos cours.
-Nous avons également été accompagné par [Metrics Factory](http://www.themetricsfactory.com/).
-Le projet s'est déroulé de septembre 2018 à mai 2019.
+
+Nous avons également été accompagné par [Metrics Factory](http://www.themetricsfactory.com/) et le projet s'est déroulé de septembre 2018 à mai 2019.
 
 ## Démo
 
@@ -13,6 +13,7 @@ Le résultat du projet est disponible [ici](https://stormy-hollows-17040.herokua
 
 La démonstration consiste à utiliser un assistant vocal qui guide l'utilisateur lors d'une simulation à partir du site [Cetelem](https://www.cetelem.fr/fr/accueil).
 La page de démonstration correspond au résultat d'une simulation de crédit d'une valeur de 15 000€  pour des vacances.
+
 Le contexte complet de la démonstration est détaillé [ici](https://docs.google.com/document/d/1t0GNiCycPUOkMlgAducT4uIE_KiCTIrA_gjZTrOMc7s/edit?usp=sharing).
 
 ## Lancer le projet localement
@@ -21,6 +22,7 @@ Le contexte complet de la démonstration est détaillé [ici](https://docs.googl
 
 À la racine du projet lancer :
 `npm start`
+
 Puis ouvrir un onglet sur Google Chrome à l'adresse [localhost:8080](http://localhost:8080).
 >Sur Linux il suffit de lancer le fichier [run.sh](run.sh).
 
@@ -39,10 +41,27 @@ Lors du premier semestre nous avons :
 
 ### Prototypage
 
-> De janvier à mai 2019
+> De janvier 2019 à mai 2019
 
 Lors du second semestre nous avons :
 - Mis en place l'agent conversationnel vocal sur [Dialogflow](https://dialogflow.com/)
 - Intégré l'agent sur une page web reprenant l'apparence du site de [Cetelem](https://www.cetelem.fr/fr/credit/resultat-simulation)
-- Réalisé des tests avec des utilisateurs externe au projet
+- Réalisé des tests utilisateurs avec des personnes externes au projet
 - Déployé le projet sur [Heroku](https://dashboard.heroku.com)
+
+## Auteurs
+
+[Hanady Abboud](https://www.linkedin.com/in/hanady-abboud)
+
+[Imane Assad](https://www.linkedin.com/in/imane-assaad-30988a107/)
+
+[Marion Duhirel](https://www.linkedin.com/in/marion-duhirel-272140a8)
+
+[Steven Bias](https://www.linkedin.com/in/steven-bias/)
+
+## Remerciements
+
+Pour réaliser le protoype nous nous sommes inspirés de divers projets dont les plus importants :
+- [github.com/jaanus/voicebot](https://github.com/jaanus/voicebot)
+- [github.com/googleapis/nodejs-dialogflow](https://github.com/googleapis/nodejs-dialogflow)
+- [How to deploy a NodeJS app to Heroku from Github (without installing Heroku on your machine)](https://www.freecodecamp.org/news/how-to-deploy-a-nodejs-app-to-heroku-from-github-without-installing-heroku-on-your-machine-433bec770efe/)
