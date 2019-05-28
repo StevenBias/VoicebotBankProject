@@ -5,7 +5,7 @@ Nous sommes une équipe de 4 étudiants et avons fait ce projet en plus de nos c
 
 Nous avons également été accompagné par [Metrics Factory](http://www.themetricsfactory.com/) et le projet s'est déroulé de septembre 2018 à mai 2019.
 
-## [Démo](https://stormy-hollows-17040.herokuapp.com/).
+## [Démo](https://stormy-hollows-17040.herokuapp.com/)
 
 >La démonstration fonctionne uniquement sur ordinateur et sur le navigateur Google Chrome.
 
